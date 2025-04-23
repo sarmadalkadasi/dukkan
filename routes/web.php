@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\StoreController;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -12,9 +13,10 @@ foreach (config('tenancy.central_domains') as $domain) {
         })->name('home');
         
         Route::middleware(['auth', 'verified'])->group(function () {
-            Route::get('dashboard', function () {
-                return Inertia::render('dashboard');
-            })->name('dashboard');
+            Route::get('/stores/create', [StoreController::class, 'create'])
+            ->name('store.create');
+            Route::post('/stores/create', [StoreController::class, 'store'])
+            ->name('store.store');
         });
         
         require __DIR__.'/settings.php';
