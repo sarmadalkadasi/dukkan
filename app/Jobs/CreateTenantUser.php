@@ -6,6 +6,8 @@ use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Log;
 
 class CreateTenantUser implements ShouldQueue
 {
@@ -22,11 +24,30 @@ class CreateTenantUser implements ShouldQueue
     public function handle(): void
     {
         $this->tenant->run(function (){
-            User::create([
-                'name' => $this->tenant->name,
-                'email' => $this->tenant->email,
-                'password' => $this->tenant->password,
-            ]);
+
+            $user = Auth::user();
+
+            try {
+                if ($user instanceof User) {
+                    $user->update([
+                        'name' => $this->tenant->name,
+                        'email' => $this->tenant->email,
+                        'password' => $this->tenant->password,
+                        'role' => 'vendor',
+                    ]);
+                } else {
+                    User::create([
+                        'name' => $this->tenant->name,
+                        'email' => $this->tenant->email,
+                        'password' => $this->tenant->password,
+                        'role' => 'vendor',
+                    ]);
+                }
+            } catch (\Exception $e) {
+                // Log the error or handle it as needed
+                Log::error('Failed to create or update user: ' . $e->getMessage());
+            }
         });
+
     }
 }

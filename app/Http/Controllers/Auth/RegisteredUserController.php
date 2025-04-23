@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Auth;
 
+use \Illuminate\Support\Str;
 use App\Http\Controllers\Controller;
 use App\Models\User;
 use Illuminate\Auth\Events\Registered;
@@ -36,16 +37,21 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
+        $rule = $request->getHost() == 'dukkan.test' &&
+         Str::contains( $request->name, '@admin')?
+         'admin':'user';
+
         $user = User::create([
             'name' => $request->name,
             'email' => $request->email,
             'password' => Hash::make($request->password),
+            'rule' => $rule,
         ]);
 
         event(new Registered($user));
 
         Auth::login($user);
 
-        return to_route('dashboard');
+        return to_route('home');
     }
 }

@@ -59,12 +59,12 @@ class StoreController extends Controller
             'password' => $request->user()->password,
             'logo' => $logoName,
         ]);
-
-        $domain = $tenant->domains()->create([
-            'domain' => $tenant->domain,
+        
+        $tenant->domains()->create([
+            'domain' => $request->domain,
         ]);
 
-        return Inertia::location('http://' . $domain->domain . '/agent');
+        return Inertia::location('http://' . $request->domain . '/agent');
     }
 
     /**

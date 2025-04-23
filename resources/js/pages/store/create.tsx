@@ -19,7 +19,7 @@ export default function CreateStore() {
 
   const submit = (e: React.FormEvent<HTMLFormElement>) =>{
     e.preventDefault();
-    post(route('stores.store')); 
+    post(route('store.store')); 
   };
 
   return (
