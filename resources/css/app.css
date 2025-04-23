@@ -148,6 +148,24 @@
     --sidebar-ring: oklch(0.439 0 0);
 }
 
+.el-messiri {
+    font-family: "El Messiri", sans-serif;
+  }
+
+.el-messiri-bold {
+    font-family: "El Messiri", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 700; /* Bold */
+    font-style: normal;
+  }
+  
+  .el-messiri-regular {
+    font-family: "El Messiri", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400; /* Regular */
+    font-style: normal;
+  }
+
 @layer base {
     * {
         @apply border-border;
