@@ -473,7 +473,7 @@ export default function Welcome() {
             {/* Testimonial */}
             <section className="relative isolate overflow-hidden bg-background px-6 py-24 sm:py-32 lg:px-8">
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-blue-100),#2b7fff)] opacity-20" />
-                <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background shadow-xl ring-1 shadow-primary/10 ring-blue-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+                <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background opacity-80 shadow-xl ring-1 shadow-primary/10 ring-blue-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
                 <div className="mx-auto max-w-2xl lg:max-w-3xl">
                     <img
                         alt="Dukkan Logo"
