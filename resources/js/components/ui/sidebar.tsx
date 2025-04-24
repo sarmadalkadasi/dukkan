@@ -1,11 +1,11 @@
 import * as React from "react"
 import { Slot } from "@radix-ui/react-slot"
 import { VariantProps, cva } from "class-variance-authority"
-import { PanelLeftIcon } from "lucide-react"
+import { ArrowLeft } from "lucide-react" // PanelLeftIcon
 
 import { useIsMobile } from "@/hooks/use-mobile"
 import { cn } from "@/lib/utils"
-import { Button } from "@/components/ui/button"
+// import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
 import { Separator } from "@/components/ui/separator"
 import {
@@ -248,29 +248,37 @@ function Sidebar({
   )
 }
 
-function SidebarTrigger({
-  className,
-  onClick,
-  ...props
-}: React.ComponentProps<typeof Button>) {
-  const { toggleSidebar } = useSidebar()
+function SidebarTrigger(
+//   {
+//   className,
+//   onClick,
+//   ...props
+// }: React.ComponentProps<typeof Button>
+) {
+  // const { toggleSidebar } = useSidebar()
 
   return (
-    <Button
-      data-sidebar="trigger"
-      data-slot="sidebar-trigger"
-      variant="ghost"
-      size="icon"
-      className={cn("h-7 w-7", className)}
-      onClick={(event) => {
-        onClick?.(event)
-        toggleSidebar()
-      }}
-      {...props}
-    >
-      <PanelLeftIcon />
-      <span className="sr-only">Toggle Sidebar</span>
-    </Button>
+    <a href={'/'} className="flex flex-col items-center gap-2 font-medium">
+      <div className="mb-1 flex h-6 w-6 items-center justify-center rounded-md pt-1">
+        <ArrowLeft className="size-6 fill-current text-[var(--foreground)] dark:text-white"/>
+      </div>
+    </a>
+
+    // <Button
+    //   data-sidebar="trigger"
+    //   data-slot="sidebar-trigger"
+    //   variant="ghost"
+    //   size="icon"
+    //   className={cn("h-7 w-7", className)}
+    //   onClick={(event) => {
+    //     onClick?.(event)
+    //     toggleSidebar()
+    //   }}
+    //   {...props}
+    // >
+    //   <PanelLeftIcon />
+    //   <span className="sr-only">Toggle Sidebar</span>
+    // </Button>
   )
 }
 
