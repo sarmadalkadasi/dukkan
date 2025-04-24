@@ -33,7 +33,7 @@ export default function CreateStore() {
       <div className="grid gap-6">
 
          <div className="grid gap-2">
-            <Label htmlFor="name" className="block text-sm font-medium text-gray-700">Name</Label>
+            <Label htmlFor="name" >Name</Label>
             <Input
               id="name"
               type="text"
@@ -51,7 +51,7 @@ export default function CreateStore() {
 
             {/* رابط المتجر */}
             <div className="grid gap-2">
-            <Label htmlFor="store-domain" className="block text-sm font-medium text-gray-700">Domain</Label>
+            <Label htmlFor="store-domain" >Domain</Label>
             <Input
               id="store-domain"
               type="text"
@@ -67,7 +67,7 @@ export default function CreateStore() {
 
             {/* وصف المتجر */}
             <div className="grid gap-2">
-            <Label htmlFor="store-description" className="block text-sm font-medium text-gray-700">Description</Label>
+            <Label htmlFor="store-description" >Description</Label>
             <Textarea
               id="store-description"
               tabIndex={3}
@@ -86,7 +86,7 @@ export default function CreateStore() {
             {/* شعار المتجر */}
             <div className="grid gap-2">
               
-            <Label htmlFor="store-logo" className="block text-sm font-medium text-gray-700"> Logo </Label>
+            <Label htmlFor="store-logo" > Logo </Label>
             <Input
               id="store-logo"
               type="file"
