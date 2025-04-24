@@ -180,7 +180,7 @@ export default function Welcome() {
                                     </DropdownMenuTrigger>
 
                                     <DropdownMenuContent
-                                        className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg border border-gray-200 bg-white p-2 shadow-lg dark:border-gray-700 dark:bg-gray-800 mr-4"
+                                        className="w-(--radix-dropdown-menu-trigger-width) min-w-56 rounded-lg border border-gray-200 bg-background p-2 shadow-lg dark:border-gray-700  mr-4"
                                     >
                                         <UserMenuContent user={auth.user} />
                                     </DropdownMenuContent>
@@ -206,7 +206,7 @@ export default function Welcome() {
                 </nav>
                 <Dialog open={mobileMenuOpen} onClose={setMobileMenuOpen} className="lg:hidden">
                     <div className="fixed inset-0 z-50" />
-                    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+                    <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
@@ -295,14 +295,14 @@ export default function Welcome() {
                             clipPath:
                                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                         }}
-                        className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
+                        className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#2b7fff] to-[#43568c] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                     />
                 </div>
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
-                        <div className="relative rounded-full px-3 py-1 text-sm/6 text-gray-600 ring-1 ring-gray-900/10 hover:ring-gray-900/20">
+                        <div className="relative rounded-full px-3 py-1 text-sm/6 dark:text-gray-400 ring-2 ring-gray-700/20 hover:ring-gray-800/20">
                             Announcing our next round of funding.{' '}
-                            <a href="#" className="font-semibold text-indigo-600">
+                            <a href="#" className="font-semibold text-primary">
                                 <span aria-hidden="true" className="absolute inset-0" />
                                 Read more <span aria-hidden="true">&rarr;</span>
                             </a>
@@ -312,13 +312,13 @@ export default function Welcome() {
                         <h1 className="text-5xl font-semibold tracking-tight text-balance light:text-gray-500 dark:text-white-900 sm:text-7xl">
                             Your store starts here
                         </h1>
-                        <p className="mt-8 text-lg font-medium light:text-gray-600 dark:text-gray-400 sm:text-xl">
+                        <p className="mt-8 text-lg font-medium light:light:text-gray-600 dark:text-gray-400 sm:text-xl">
                             A comprehensive Yemeni platform for creating and managing stores with simple and professional steps, fully supporting the Arabic language and providing an easy and suitable experience for customers in Yemen.
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
                                 href={auth.user ?(auth.user.role==='admin'?route('filament.admin.pages.dashboard'):route('store.create')): route('login')}
-                                className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-indigo-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+                                className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                             >
                                 Start for free
                             </a>
@@ -337,31 +337,31 @@ export default function Welcome() {
                             clipPath:
                                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                         }}
-                        className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
+                        className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#2b7fff] to-[#43568c] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
                     />
                 </div>
             </div>
 
 
             {/* Features*/}
-            <div className="overflow-hidden bg-white py-14 sm:py-32">
+            <div className="overflow-hidden bg-background py-14 sm:py-32">
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div className="lg:pt-4 lg:pr-8">
                             <div className="lg:max-w-lg">
-                                <h2 className="text-base/7 font-semibold text-indigo-600">Deploy faster</h2>
-                                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty text-gray-900 sm:text-5xl">
+                                <h2 className="text-base/7 font-semibold text-primary">Deploy faster</h2>
+                                <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty light:text-gray-900 sm:text-5xl">
                                     A better workflow
                                 </p>
-                                <p className="mt-6 text-lg/8 text-gray-600">
+                                <p className="mt-6 text-lg/8 light:text-gray-600">
                                     Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
                                     iste dolor cupiditate blanditiis ratione.
                                 </p>
-                                <dl className="mt-10 max-w-xl space-y-8 text-base/7 text-gray-600 lg:max-w-none">
+                                <dl className="mt-10 max-w-xl space-y-8 text-base/7 light:text-gray-600 lg:max-w-none">
                                     {features.map((feature) => (
                                         <div key={feature.name} className="relative pl-9">
                                             <dt className="inline font-semibold text-gray-900">
-                                                <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-indigo-600" />
+                                                <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-primary" />
                                                 {feature.name}
                                             </dt>{' '}
                                             <dd className="inline">{feature.description}</dd>
@@ -382,23 +382,23 @@ export default function Welcome() {
             </div>
 
             {/* Pricing*/}
-            <div className="relative isolate bg-white px-6 py-24 sm:py-32 lg:px-8">
+            <div className="relative isolate bg-background px-6 py-24 sm:py-32 lg:px-8">
                 <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
                     <div
                         style={{
                             clipPath:
                                 'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                         }}
-                        className="mx-auto aspect-1155/678 w-[72.1875rem] bg-linear-to-tr from-[#ff80b5] to-[#9089fc] opacity-30"
+                        className="mx-auto aspect-1155/678 w-[72.1875rem] bg-linear-to-tr from-[#2b7fff] to-[#43568c] opacity-30"
                     />
                 </div>
                 <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="text-base/7 font-semibold text-indigo-600">Pricing</h2>
-                    <p className="mt-2 text-5xl font-semibold tracking-tight text-balance text-gray-900 sm:text-6xl">
+                    <h2 className="text-base/7 font-semibold text-primary">Pricing</h2>
+                    <p className="mt-2 text-5xl font-semibold tracking-tight text-balance light:text-gray-900 sm:text-6xl">
                         Choose the right plan for you
                     </p>
                 </div>
-                <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty text-gray-600 sm:text-xl/8">
+                <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty light:text-gray-600 dark:text-gray-400 sm:text-xl/8">
                     Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
                     loyalty, and driving sales.
                 </p>
@@ -407,7 +407,7 @@ export default function Welcome() {
                         <div
                             key={tier.id}
                             className={classNames(
-                                tier.featured ? 'relative bg-gray-900 shadow-2xl' : 'bg-white/60 sm:mx-8 lg:mx-0',
+                                tier.featured ? 'relative bg-gray-900 shadow-2xl' : 'bg-background/60 sm:mx-8 lg:mx-0',
                                 tier.featured
                                     ? ''
                                     : tierIdx === 0
@@ -418,28 +418,28 @@ export default function Welcome() {
                         >
                             <h3
                                 id={tier.id}
-                                className={classNames(tier.featured ? 'text-indigo-400' : 'text-indigo-600', 'text-base/7 font-semibold')}
+                                className={classNames(tier.featured ? 'text-blue-400' : 'text-primary', 'text-base/7 font-semibold')}
                             >
                                 {tier.name}
                             </h3>
                             <p className="mt-4 flex items-baseline gap-x-2">
                                 <span
                                     className={classNames(
-                                        tier.featured ? 'text-white' : 'text-gray-900',
+                                        tier.featured ? 'text-white' : 'light:text-gray-900',
                                         'text-5xl font-semibold tracking-tight',
                                     )}
                                 >
                                     {tier.priceMonthly}
                                 </span>
-                                <span className={classNames(tier.featured ? 'text-gray-400' : 'text-gray-500', 'text-base')}>/month</span>
+                                <span className={classNames(tier.featured ? 'text-gray-400' : 'light:text-gray-500', 'text-base')}>/month</span>
                             </p>
-                            <p className={classNames(tier.featured ? 'text-gray-300' : 'text-gray-600', 'mt-6 text-base/7')}>
+                            <p className={classNames(tier.featured ? 'text-gray-300' : 'light:text-gray-600', 'mt-6 text-base/7')}>
                                 {tier.description}
                             </p>
                             <ul
                                 role="list"
                                 className={classNames(
-                                    tier.featured ? 'text-gray-300' : 'text-gray-600',
+                                    tier.featured ? 'text-gray-300' : 'light:text-gray-600',
                                     'mt-8 space-y-3 text-sm/6 sm:mt-10',
                                 )}
                             >
@@ -447,7 +447,7 @@ export default function Welcome() {
                                     <li key={feature} className="flex gap-x-3">
                                         <CheckIcon
                                             aria-hidden="true"
-                                            className={classNames(tier.featured ? 'text-indigo-400' : 'text-indigo-600', 'h-6 w-5 flex-none')}
+                                            className={classNames(tier.featured ? 'text-blue-400' : 'text-primary', 'h-6 w-5 flex-none')}
                                         />
                                         {feature}
                                     </li>
@@ -458,8 +458,8 @@ export default function Welcome() {
                                 aria-describedby={tier.id}
                                 className={classNames(
                                     tier.featured
-                                        ? 'bg-indigo-500 text-white shadow-xs hover:bg-indigo-400 focus-visible:outline-indigo-500'
-                                        : 'text-indigo-600 ring-1 ring-indigo-200 ring-inset hover:ring-indigo-300 focus-visible:outline-indigo-600',
+                                        ? 'bg-blue-500 text-white shadow-xs hover:bg-blue-400 focus-visible:outline-blue-500'
+                                        : 'text-primary ring-1 ring-blue-200 ring-inset hover:ring-blue-300 focus-visible:outline-primary',
                                     'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
                                 )}
                             >
@@ -471,34 +471,34 @@ export default function Welcome() {
             </div>
 
             {/* Testimonial */}
-            <section className="relative isolate overflow-hidden bg-white px-6 py-24 sm:py-32 lg:px-8">
-                <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-indigo-100),white)] opacity-20" />
-                <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-white shadow-xl ring-1 shadow-indigo-600/10 ring-indigo-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
-                <div className="mx-auto max-w-2xl lg:max-w-4xl">
+            <section className="relative isolate overflow-hidden bg-background px-6 py-24 sm:py-32 lg:px-8">
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-blue-100),#2b7fff)] opacity-20" />
+                <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background shadow-xl ring-1 shadow-primary/10 ring-blue-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
+                <div className="mx-auto max-w-2xl lg:max-w-3xl">
                     <img
                         alt="Dukkan Logo"
                         src="/dukkan-logo.svg"
-                        className="mx-auto h-12"
+                        className="mx-auto h-18 w-auto"
                     />
-                    <figure className="mt-10">
-                        <blockquote className="text-center text-xl/8 font-semibold text-gray-900 sm:text-2xl/9">
+                    <figure className="mt-8 pt-4 pb-4">
+                        <blockquote className="text-center text-lg font-medium light:text-gray-800 dark:text-gray-300 sm:text-xl">
                             <p>
                                 “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
                                 molestiae. Numquam corrupti in laborum sed rerum et corporis.”
                             </p>
                         </blockquote>
-                        <figcaption className="mt-10">
+                        <figcaption className="mt-8">
                             <img
                                 alt=""
                                 src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
-                                className="mx-auto size-10 rounded-full"
+                                className="mx-auto h-14 w-14 rounded-full"
                             />
-                            <div className="mt-4 flex items-center justify-center space-x-3 text-base">
-                                <div className="font-semibold text-gray-900">Judith Black</div>
-                                <svg width={3} height={3} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-900">
+                            <div className="mt-4 flex items-center justify-center space-x-2 text-sm">
+                                <div className="font-medium light:text-gray-800">Judith Black</div>
+                                <svg width={2} height={2} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-800">
                                     <circle r={1} cx={1} cy={1} />
                                 </svg>
-                                <div className="text-gray-600">CEO of Workcation</div>
+                                <div className="light:text-gray-600">CEO of Workcation</div>
                             </div>
                         </figcaption>
                     </figure>
@@ -506,19 +506,19 @@ export default function Welcome() {
             </section>
 
             {/* Footer */}
-            <footer className="relative bg-blueGray-200 pt-8 pb-6">
+            <footer className="relative bg-primary-200 pt-18 pb-8">
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap text-left lg:text-left">
+                    <div className="flex flex-wrap text-left lg:text-left pb-8">
                         <div className="w-full lg:w-6/12 px-4">
                             <h4 className="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
                             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
                                 Find us on any of these platforms, we respond 1-2 business days.
                             </h5>
                             <div className="mt-6 lg:mb-0 mb-6">
-                                <button className="bg-white text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-twitter"></i></button><button className="bg-white text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-facebook-square"></i></button><button className="bg-white text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-dribbble"></i></button><button className="bg-white text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <button className="bg-background text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                    <i className="fab fa-twitter"></i></button><button className="bg-background text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                    <i className="fab fa-facebook-square"></i></button><button className="bg-background text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                    <i className="fab fa-dribbble"></i></button><button className="bg-background text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                     <i className="fab fa-github"></i>
                                 </button>
                             </div>
