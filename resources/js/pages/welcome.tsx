@@ -472,7 +472,7 @@ export default function Welcome() {
 
             {/* Testimonial */}
             <section className="relative isolate overflow-hidden bg-background px-6 py-24 sm:py-32 lg:px-8">
-                <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-blue-100),#2b7fff)] opacity-20" />
+                <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-blue-300),white)] opacity-20" />
                 <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background opacity-80 shadow-xl ring-1 shadow-primary/10 ring-blue-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
                 <div className="mx-auto max-w-2xl lg:max-w-3xl">
                     <img
@@ -506,7 +506,7 @@ export default function Welcome() {
             </section>
 
             {/* Footer */}
-            <footer className="relative bg-primary-200 pt-18 pb-8">
+            <footer className="relative bg-blue-100 dark:bg-gray-900 pt-18 pb-8">
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap text-left lg:text-left pb-8">
                         <div className="w-full lg:w-6/12 px-4">
