@@ -562,7 +562,7 @@ export default function Welcome() {
                             </div>
                         </div>
                     </div>
-                    <hr className="my-6 border-blueGray-300" />
+                    <hr className="my-6 border-gray-400 dark:bg-blue-900" />
                     <div className="flex flex-wrap items-center md:justify-between justify-center">
                         <div className="w-full md:w-4/12 px-4 mx-auto text-center">
                             <div className="text-sm text-blueGray-500 font-semibold py-1">
