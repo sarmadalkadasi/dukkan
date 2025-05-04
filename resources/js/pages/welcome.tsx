@@ -317,7 +317,7 @@ export default function Welcome() {
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
-                                href={auth.user ?(auth.user.role==='admin'?route('filament.admin.pages.dashboard'):route('store.create')): route('login')}
+                                href={auth.user ?(auth.user.rule==='admin'?route('filament.admin.pages.dashboard'):route('store.create')): route('login')}
                                 className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                             >
                                 Start for free

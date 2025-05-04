@@ -64,7 +64,7 @@ class StoreController extends Controller
             'domain' => $request->domain,
         ]);
 
-        return Inertia::location('http://' . $request->domain . '/agent');
+        return Inertia::location('http://' . $request->domain . '/vendor');
     }
 
     /**
