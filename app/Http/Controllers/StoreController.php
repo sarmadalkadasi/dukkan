@@ -11,9 +11,6 @@ class StoreController extends Controller
     /**
      * Display a listing of the resource.
      */
-        /**
-     * Display a listing of the resource.
-     */
     public function index()
     {
         $stores = Tenant::latest()->paginate(10);
@@ -25,7 +22,7 @@ class StoreController extends Controller
      */
     public function create()
     {
-        return Inertia::render('store/create');
+       return Inertia::render('store/create');
     }
 
     /**
@@ -46,6 +43,7 @@ class StoreController extends Controller
             return redirect()->route('home')->with('error', 'You already have a store associated with this email.');
         }
 
+        $logoName = null;
 
         if ($logo = $request->file('logo')) {
             $logoName = date('YmdHis') . '.' . $logo->getClientOriginalExtension();
@@ -64,7 +62,7 @@ class StoreController extends Controller
             'domain' => $request->domain,
         ]);
 
-        return Inertia::location('http://' . $request->domain . '/vendor');
+        return Inertia::location('http://' . $request->domain . ':8000/vendor');
     }
 
     /**

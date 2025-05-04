@@ -26,10 +26,13 @@ class CreateTenantUser implements ShouldQueue
         $this->tenant->run(function (){
 
             $user = Auth::user();
-
             try {
+
                 if ($user instanceof User && $user->rule !== 'admin') {
-                    $user->update([
+                    $user->rule = 'vendor';
+                    $user->save();
+                    
+                    User::create([
                         'name' => $this->tenant->name,
                         'email' => $this->tenant->email,
                         'password' => $this->tenant->password,
