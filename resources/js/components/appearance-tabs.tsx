@@ -7,9 +7,9 @@ export default function AppearanceToggleTab({ className = '', ...props }: HTMLAt
     const { appearance, updateAppearance } = useAppearance();
 
     const tabs: { value: Appearance; icon: LucideIcon; label: string }[] = [
-        { value: 'light', icon: Sun, label: 'Light' },
-        { value: 'dark', icon: Moon, label: 'Dark' },
-        { value: 'system', icon: Monitor, label: 'System' },
+        { value: 'light', icon: Sun, label: 'فاتح' },
+        { value: 'dark', icon: Moon, label: 'داكن' },
+        { value: 'system', icon: Monitor, label: 'النظام' },
     ];
 
     return (
@@ -25,8 +25,8 @@ export default function AppearanceToggleTab({ className = '', ...props }: HTMLAt
                             : 'text-neutral-500 hover:bg-neutral-200/60 hover:text-black dark:text-neutral-400 dark:hover:bg-neutral-700/60',
                     )}
                 >
-                    <Icon className="-ml-1 h-4 w-4" />
-                    <span className="ml-1.5 text-sm">{label}</span>
+                    <Icon className="-mr-1 h-4 w-4" />
+                    <span className="mr-1.5 text-sm">{label}</span>
                 </button>
             ))}
         </div>

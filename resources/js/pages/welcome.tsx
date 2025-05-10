@@ -13,108 +13,108 @@ import { useInitials } from '@/hooks/use-initials';
 
 
 const navigation = [
-    { name: 'Product', href: '#' },
-    { name: 'Features', href: '#' },
-    { name: 'Marketplace', href: '#' },
-    { name: 'Company', href: '#' },
+    { name: 'المنتج', href: '#' },
+    { name: 'الميزات', href: '#' },
+    { name: 'السوق', href: '#' },
+    { name: 'الشركة', href: '#' },
 ]
 
-
-
-const features = [
-    {
-        name: 'Push to deploy.',
-        description:
-            'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
-        icon: CloudArrowUpIcon,
-    },
-    {
-        name: 'SSL certificates.',
-        description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
-        icon: LockClosedIcon,
-    },
-    {
-        name: 'Database backups.',
-        description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
-        icon: ServerIcon,
-    },
-]
 
 
 // const features = [
 //     {
-//         name: 'نشر بضغطة زر',
+//         name: 'Push to deploy.',
 //         description:
-//             'يمكنك نشر متجرك بسهولة وسرعة بضغطة واحدة فقط دون الحاجة لإعدادات معقدة.',
-//         icon: UploadCloudIcon,
+//             'Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque, iste dolor cupiditate blanditiis ratione.',
+//         icon: CloudArrowUpIcon,
 //     },
 //     {
-//         name: 'شهادات SSL',
-//         description: 'نوفّر حماية قوية لمتجرك من خلال شهادات SSL لضمان تشفير البيانات وأمان العملاء.',
-//         icon: LockIcon,
+//         name: 'SSL certificates.',
+//         description: 'Anim aute id magna aliqua ad ad non deserunt sunt. Qui irure qui lorem cupidatat commodo.',
+//         icon: LockClosedIcon,
 //     },
 //     {
-//         name: 'نسخ احتياطي للبيانات',
-//         description: 'نقوم بعمل نسخ احتياطية منتظمة لبياناتك للحفاظ عليها من أي فقدان أو طارئ.',
+//         name: 'Database backups.',
+//         description: 'Ac tincidunt sapien vehicula erat auctor pellentesque rhoncus. Et magna sit morbi lobortis.',
 //         icon: ServerIcon,
 //     },
 // ]
 
-const tiers = [
+
+const features = [
     {
-        name: 'Hobby',
-        id: 'tier-hobby',
-        href: '#',
-        priceMonthly: '$29',
-        description: "The perfect plan if you're just getting started with our product.",
-        features: ['25 products', 'Up to 10,000 subscribers', 'Advanced analytics', '24-hour support response time'],
-        featured: false,
+        name: 'نشر بضغطة زر',
+        description:
+            'يمكنك نشر متجرك بسهولة وسرعة بضغطة واحدة فقط دون الحاجة لإعدادات معقدة.',
+        icon: CloudArrowUpIcon,
     },
     {
-        name: 'Enterprise',
-        id: 'tier-enterprise',
-        href: '#',
-        priceMonthly: '$99',
-        description: 'Dedicated support and infrastructure for your company.',
-        features: [
-            'Unlimited products',
-            'Unlimited subscribers',
-            'Advanced analytics',
-            'Dedicated support representative',
-            'Marketing automations',
-            'Custom integrations',
-        ],
-        featured: true,
+        name: 'شهادات SSL',
+        description: 'نوفّر حماية قوية لمتجرك من خلال شهادات SSL لضمان تشفير البيانات وأمان العملاء.',
+        icon: LockClosedIcon,
+    },
+    {
+        name: 'نسخ احتياطي للبيانات',
+        description: 'نقوم بعمل نسخ احتياطية منتظمة لبياناتك للحفاظ عليها من أي فقدان أو طارئ.',
+        icon: ServerIcon,
     },
 ]
 
 // const tiers = [
 //     {
-//         name: 'هواية',
+//         name: 'Hobby',
 //         id: 'tier-hobby',
 //         href: '#',
-//         priceMonthly: '29$',
-//         description: 'الخطة المثالية إذا كنت بدأت للتو باستخدام منتجنا.',
-//         features: ['25 منتجًا', 'حتى 10,000 مشترك', 'تحليلات متقدمة', 'استجابة للدعم خلال 24 ساعة'],
+//         priceMonthly: '$29',
+//         description: "The perfect plan if you're just getting started with our product.",
+//         features: ['25 products', 'Up to 10,000 subscribers', 'Advanced analytics', '24-hour support response time'],
 //         featured: false,
 //     },
 //     {
-//         name: 'مؤسسة',
+//         name: 'Enterprise',
 //         id: 'tier-enterprise',
 //         href: '#',
-//         priceMonthly: '99$',
-//         description: 'دعم مخصص وبنية تحتية لشركتك.',
+//         priceMonthly: '$99',
+//         description: 'Dedicated support and infrastructure for your company.',
 //         features: [
-//             'منتجات غير محدودة',
-//             'مشتركون غير محدودين',
-//             'تحليلات متقدمة',
-//             'مساعد دعم مخصص',
-//             'أتمتة التسويق',
-//             'تكاملات مخصصة',
+//             'Unlimited products',
+//             'Unlimited subscribers',
+//             'Advanced analytics',
+//             'Dedicated support representative',
+//             'Marketing automations',
+//             'Custom integrations',
 //         ],
 //         featured: true,
 //     },
 // ]
+
+const tiers = [
+    {
+        name: 'هواية',
+        id: 'tier-hobby',
+        href: '#',
+        priceMonthly: '29$',
+        description: 'الخطة المثالية إذا كنت بدأت للتو باستخدام منتجنا.',
+        features: ['25 منتجًا', 'حتى 10,000 مشترك', 'تحليلات متقدمة', 'استجابة للدعم خلال 24 ساعة'],
+        featured: false,
+    },
+    {
+        name: 'مؤسسة',
+        id: 'tier-enterprise',
+        href: '#',
+        priceMonthly: '99$',
+        description: 'دعم مخصص وبنية تحتية لشركتك.',
+        features: [
+            'منتجات غير محدودة',
+            'مشتركون غير محدودين',
+            'تحليلات متقدمة',
+            'مساعد دعم مخصص',
+            'أتمتة التسويق',
+            'تكاملات مخصصة',
+        ],
+        featured: true,
+    },
+]
 
 function classNames(...classes: (string | boolean | undefined)[]) {
     return classes.filter(Boolean).join(' ')
@@ -192,13 +192,13 @@ export default function Welcome() {
                                     href={route('login')}
                                     className="inline-block rounded-sm border border-transparent px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#19140035] dark:text-[#EDEDEC] dark:hover:border-[#3E3E3A] mr-4"
                                 >
-                                    Log in
+                                    تسجيل دخول
                                 </Link>
                                 <Link
                                     href={route('register')}
                                     className="inline-block rounded-sm border border-[#19140035] px-5 py-1.5 text-sm leading-normal text-[#1b1b18] hover:border-[#1915014a] dark:border-[#3E3E3A] dark:text-[#EDEDEC] dark:hover:border-[#62605b]"
                                 >
-                                    Register
+                                    إنشاء حساب
                                 </Link>
                             </>
                         )}
@@ -293,7 +293,7 @@ export default function Welcome() {
                     <div
                         style={{
                             clipPath:
-                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                                'مضلع(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                         }}
                         className="relative left-[calc(50%-11rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 rotate-[30deg] bg-linear-to-tr from-[#2b7fff] to-[#43568c] opacity-30 sm:left-[calc(50%-30rem)] sm:w-[72.1875rem]"
                     />
@@ -301,29 +301,29 @@ export default function Welcome() {
                 <div className="mx-auto max-w-2xl py-32 sm:py-48 lg:py-56">
                     <div className="hidden sm:mb-8 sm:flex sm:justify-center">
                         <div className="relative rounded-full px-3 py-1 text-sm/6 dark:text-gray-400 ring-2 ring-gray-700/20 hover:ring-gray-800/20">
-                            Announcing our next round of funding.{' '}
+                            نعلن عن جولة التمويل القادمة لدينا.
                             <a href="#" className="font-semibold text-primary">
                                 <span aria-hidden="true" className="absolute inset-0" />
-                                Read more <span aria-hidden="true">&rarr;</span>
+                                اقرأ المزيد <span aria-hidden="true">&rarr;</span>
                             </a>
                         </div>
                     </div>
                     <div className="text-center">
                         <h1 className="text-5xl font-semibold tracking-tight text-balance light:text-gray-500 dark:text-white-900 sm:text-7xl">
-                            Your store starts here
+                            متجرك يبدأ من هنا
                         </h1>
                         <p className="mt-8 text-lg font-medium light:light:text-gray-600 dark:text-gray-400 sm:text-xl">
-                            A comprehensive Yemeni platform for creating and managing stores with simple and professional steps, fully supporting the Arabic language and providing an easy and suitable experience for customers in Yemen.
+                            منصة يمنية شاملة لإنشاء وإدارة المتاجر بخطوات بسيطة واحترافية، تدعم اللغة العربية بشكل كامل وتوفر تجربة سهلة ومناسبة للعملاء في اليمن.
                         </p>
                         <div className="mt-10 flex items-center justify-center gap-x-6">
                             <a
-                                href={auth.user ?(auth.user.role==='admin'?route('filament.admin.pages.dashboard'):route('store.create')): route('login')}
+                                href={auth.user ? (auth.user.role === 'admin' ? route('filament.admin.pages.dashboard') : route('store.create')) : route('login')}
                                 className="rounded-md bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-xs hover:bg-blue-500 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary"
                             >
-                                Start for free
+                                ابدأ مجانًا
                             </a>
-                            <a href="#" className="text-sm/6 font-semibold  light:text-gray-900 dark:text-white-900">
-                                Discover features <span aria-hidden="true">←</span>
+                            <a href="#" className="text-sm/6 font-semibold light:text-gray-900 dark:text-white-900">
+                                اكتشف الميزات <span aria-hidden="true">←</span>
                             </a>
                         </div>
                     </div>
@@ -335,7 +335,7 @@ export default function Welcome() {
                     <div
                         style={{
                             clipPath:
-                                'polygon(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
+                                'مضلع(74.1% 44.1%, 100% 61.6%, 97.5% 26.9%, 85.5% 0.1%, 80.7% 2%, 72.5% 32.5%, 60.2% 62.4%, 52.4% 68.1%, 47.5% 58.3%, 45.2% 34.5%, 27.5% 76.7%, 0.1% 64.9%, 17.9% 100%, 27.6% 76.8%, 76.1% 97.7%, 74.1% 44.1%)',
                         }}
                         className="relative left-[calc(50%+3rem)] aspect-1155/678 w-[36.125rem] -translate-x-1/2 bg-linear-to-tr from-[#2b7fff] to-[#43568c] opacity-30 sm:left-[calc(50%+36rem)] sm:w-[72.1875rem]"
                     />
@@ -344,24 +344,23 @@ export default function Welcome() {
 
 
             {/* Features*/}
-            <div className="overflow-hidden bg-background py-14 sm:py-32">
+            <div className="overflow-hidden bg-background py-14 sm:py-32" dir={"rtl"}>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div className="lg:pt-4 lg:pr-8">
                             <div className="lg:max-w-lg">
-                                <h2 className="text-base/7 font-semibold text-primary">Deploy faster</h2>
+                                <h2 className="text-base/7 font-semibold text-primary">انشر بسرعة</h2>
                                 <p className="mt-2 text-4xl font-semibold tracking-tight text-pretty light:text-gray-900 sm:text-5xl">
-                                    A better workflow
+                                    سير عمل أفضل لإدارة متجرك
                                 </p>
                                 <p className="mt-6 text-lg/8 light:text-gray-600">
-                                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Maiores impedit perferendis suscipit eaque,
-                                    iste dolor cupiditate blanditiis ratione.
+                                    قم بإنشاء وإدارة متجرك بسهولة وسرعة، مع أدوات قوية تساعدك على النمو وتحقيق المزيد من الأرباح.
                                 </p>
                                 <dl className="mt-10 max-w-xl space-y-8 text-base/7 light:text-gray-600 lg:max-w-none">
                                     {features.map((feature) => (
-                                        <div key={feature.name} className="relative pl-9">
+                                        <div key={feature.name} className="relative pr-9">
                                             <dt className="inline font-semibold text-gray-900">
-                                                <feature.icon aria-hidden="true" className="absolute top-1 left-1 size-5 text-primary" />
+                                                <feature.icon aria-hidden="true" className="absolute top-1 right-1 size-5 text-primary" />
                                                 {feature.name}
                                             </dt>{' '}
                                             <dd className="inline">{feature.description}</dd>
@@ -382,7 +381,7 @@ export default function Welcome() {
             </div>
 
             {/* Pricing*/}
-            <div className="relative isolate bg-background px-6 py-24 sm:py-32 lg:px-8">
+            <div className="relative isolate bg-background px-6 py-24 sm:py-32 lg:px-8" dir={"rtl"}>
                 <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
                     <div
                         style={{
@@ -393,14 +392,13 @@ export default function Welcome() {
                     />
                 </div>
                 <div className="mx-auto max-w-4xl text-center">
-                    <h2 className="text-base/7 font-semibold text-primary">Pricing</h2>
+                    <h2 className="text-base/7 font-semibold text-primary">الأسعار</h2>
                     <p className="mt-2 text-5xl font-semibold tracking-tight text-balance light:text-gray-900 sm:text-6xl">
-                        Choose the right plan for you
+                        اختر الخطة المناسبة لك
                     </p>
                 </div>
                 <p className="mx-auto mt-6 max-w-2xl text-center text-lg font-medium text-pretty light:text-gray-600 dark:text-gray-400 sm:text-xl/8">
-                    Choose an affordable plan that’s packed with the best features for engaging your audience, creating customer
-                    loyalty, and driving sales.
+                    اختر خطة ميسورة التكلفة تحتوي على أفضل الميزات لجذب جمهورك وبناء ولاء العملاء ودفع المبيعات.
                 </p>
                 <div className="mx-auto mt-16 grid max-w-lg grid-cols-1 items-center gap-y-6 sm:mt-20 sm:gap-y-0 lg:max-w-4xl lg:grid-cols-2">
                     {tiers.map((tier, tierIdx) => (
@@ -463,7 +461,7 @@ export default function Welcome() {
                                     'mt-8 block rounded-md px-3.5 py-2.5 text-center text-sm font-semibold focus-visible:outline-2 focus-visible:outline-offset-2 sm:mt-10',
                                 )}
                             >
-                                Get started today
+                                ابدأ اليوم
                             </a>
                         </div>
                     ))}
@@ -471,7 +469,7 @@ export default function Welcome() {
             </div>
 
             {/* Testimonial */}
-            <section className="relative isolate overflow-hidden bg-background px-6 py-24 sm:py-32 lg:px-8">
+            <section className="relative isolate overflow-hidden bg-background px-6 py-24 sm:py-32 lg:px-8" dir={"rtl"}>
                 <div className="absolute inset-0 -z-10 bg-[radial-gradient(45rem_50rem_at_top,var(--color-blue-300),white)] opacity-20" />
                 <div className="absolute inset-y-0 right-1/2 -z-10 mr-16 w-[200%] origin-bottom-left skew-x-[-30deg] bg-background opacity-80 shadow-xl ring-1 shadow-primary/10 ring-blue-50 sm:mr-28 lg:mr-0 xl:mr-16 xl:origin-center" />
                 <div className="mx-auto max-w-2xl lg:max-w-3xl">
@@ -483,8 +481,7 @@ export default function Welcome() {
                     <figure className="mt-8 pt-4 pb-4">
                         <blockquote className="text-center text-lg font-medium light:text-gray-800 dark:text-gray-300 sm:text-xl">
                             <p>
-                                “Lorem ipsum dolor sit amet consectetur adipisicing elit. Nemo expedita voluptas culpa sapiente alias
-                                molestiae. Numquam corrupti in laborum sed rerum et corporis.”
+                                “لقد ساعدتني منصتكم في إطلاق متجري بكل سهولة واحترافية. دعم ممتاز، وواجهة سهلة الاستخدام، وأنظمة موثوقة.”
                             </p>
                         </blockquote>
                         <figcaption className="mt-8">
@@ -494,11 +491,11 @@ export default function Welcome() {
                                 className="mx-auto h-14 w-14 rounded-full"
                             />
                             <div className="mt-4 flex items-center justify-center space-x-2 text-sm">
-                                <div className="font-medium light:text-gray-800">Judith Black</div>
+                                <div className="font-medium light:text-gray-800">جوديث بلاك</div>
                                 <svg width={2} height={2} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-800">
                                     <circle r={1} cx={1} cy={1} />
                                 </svg>
-                                <div className="light:text-gray-600">CEO of Workcation</div>
+                                <div className="light:text-gray-600">صاحب متجر إلكتروني</div>
                             </div>
                         </figcaption>
                     </figure>
@@ -506,56 +503,56 @@ export default function Welcome() {
             </section>
 
             {/* Footer */}
-            <footer className="relative bg-blue-100 dark:bg-gray-900 pt-18 pb-8">
+            <footer className="relative bg-blue-100 dark:bg-gray-900 pt-18 pb-8" dir={"rtl"}>
                 <div className="container mx-auto px-4">
-                    <div className="flex flex-wrap text-left lg:text-left pb-8">
+                    <div className="flex flex-wrap text-right lg:text-right pb-8">
                         <div className="w-full lg:w-6/12 px-4">
-                            <h4 className="text-3xl fonat-semibold text-blueGray-700">Let's keep in touch!</h4>
+                            <h4 className="text-3xl fonat-semibold text-blueGray-700">دعونا نبقى على تواصل!</h4>
                             <h5 className="text-lg mt-0 mb-2 text-blueGray-600">
-                                Find us on any of these platforms, we respond 1-2 business days.
+                                تجدنا على أي من هذه المنصات، وسنرد خلال 1-2 يوم عمل.
                             </h5>
                             <div className="mt-6 lg:mb-0 mb-6">
                                 <button className="bg-background text-lightBlue-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
                                     <i className="fab fa-twitter"></i></button><button className="bg-background text-lightBlue-600 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-facebook-square"></i></button><button className="bg-background text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-dribbble"></i></button><button className="bg-background text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
-                                    <i className="fab fa-github"></i>
-                                </button>
+                                <i className="fab fa-facebook-square"></i></button><button className="bg-background text-pink-400 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <i className="fab fa-dribbble"></i></button><button className="bg-background text-blueGray-800 shadow-lg font-normal h-10 w-10 items-center justify-center align-center rounded-full outline-none focus:outline-none mr-2" type="button">
+                                <i className="fab fa-github"></i>
+                            </button>
                             </div>
                         </div>
                         <div className="w-full lg:w-6/12 px-4">
                             <div className="flex flex-wrap items-top mb-6">
                                 <div className="w-full lg:w-4/12 px-4 ml-auto">
-                                    <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Useful Links</span>
+                                    <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">روابط مفيدة</span>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">About Us</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/presentation?ref=njs-profile">من نحن</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">Blog</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://blog.creative-tim.com?ref=njs-profile">المدونة</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">Github</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.github.com/creativetimofficial?ref=njs-profile">جيت هاب</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">Free Products</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://www.creative-tim.com/bootstrap-themes/free?ref=njs-profile">منتجات مجانية</a>
                                         </li>
                                     </ul>
                                 </div>
                                 <div className="w-full lg:w-4/12 px-4">
-                                    <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">Other Resources</span>
+                                    <span className="block uppercase text-blueGray-500 text-sm font-semibold mb-2">موارد أخرى</span>
                                     <ul className="list-unstyled">
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">MIT License</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://github.com/creativetimofficial/notus-js/blob/main/LICENSE.md?ref=njs-profile">رخصة MIT</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">Terms &amp; Conditions</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/terms?ref=njs-profile">الشروط والأحكام</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">Privacy Policy</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/privacy?ref=njs-profile">سياسة الخصوصية</a>
                                         </li>
                                         <li>
-                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">Contact Us</a>
+                                            <a className="text-blueGray-600 hover:text-blueGray-800 font-semibold block pb-2 text-sm" href="https://creative-tim.com/contact-us?ref=njs-profile">اتصل بنا</a>
                                         </li>
                                     </ul>
                                 </div>
@@ -566,8 +563,8 @@ export default function Welcome() {
                     <div className="flex flex-wrap items-center md:justify-between justify-center">
                         <div className="w-full md:w-4/12 px-4 mx-auto text-center">
                             <div className="text-sm text-blueGray-500 font-semibold py-1">
-                                Copyright © <span id="get-current-year">2021</span><a href="https://www.creative-tim.com/product/notus-js" className="text-blueGray-500 hover:text-gray-800" target="_blank"> Notus JS by</a>
-                                <a href="https://www.creative-tim.com?ref=njs-profile" className="text-blueGray-500 hover:text-blueGray-800">Creative Tim</a>.
+                                حقوق النشر © <span id="get-current-year">2025</span><a href="https://www.creative-tim.com/product/notus-js" className="text-blueGray-500 hover:text-gray-800" target="_blank"> بواسطة </a>
+                                <a href="https://www.creative-tim.com?ref=njs-profile" className="text-blueGray-500 hover:text-blueGray-800">Dukkan</a>
                             </div>
                         </div>
                     </div>
