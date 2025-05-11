@@ -2,7 +2,6 @@
 
 namespace App\Models;
 
-use Illuminate\Database\Eloquent\Relations\BelongsTo;
 use Illuminate\Database\Eloquent\Relations\HasMany;
 use Illuminate\Support\Facades\Hash;
 use Stancl\Tenancy\Database\Models\Tenant as BaseTenant;
@@ -34,12 +33,8 @@ class Tenant extends BaseTenant implements TenantWithDatabase
         'remember_token',
     ];
 
-    public function setPasswordAttribute($value){
-        return $this->attributes['password'] = Hash::make($value);
-    }
-
-    public function user(): BelongsTo
+    public function setPasswordAttribute($value)
     {
-        return $this->belongsTo(User::class);
+        return $this->attributes['password'] = Hash::make($value);
     }
 }

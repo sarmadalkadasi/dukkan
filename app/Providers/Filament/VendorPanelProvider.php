@@ -51,10 +51,9 @@ class VendorPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-                
             ])->middleware([
-                // custom middleware
-                'web',
+                // Custom middlewares
+                'universal',
                 InitializeTenancyByDomain::class,
                 PreventAccessFromCentralDomains::class,
             ], isPersistent: true)

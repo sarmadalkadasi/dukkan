@@ -55,6 +55,11 @@ class AdminPanelProvider extends PanelProvider
                 // custom middleware
                 PreventAccessFromTenantDomains::class,
             ])
+            ->middleware([
+                //Custom middlewares
+                'universal',
+                // PreventAccessFromTenantDomains::class,
+            ])
             ->authMiddleware([
                 Authenticate::class,
             ]);
