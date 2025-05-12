@@ -29,7 +29,7 @@ class RegisteredUserController extends Controller
      *
      * @throws \Illuminate\Validation\ValidationException
      */
-    public function store(Request $request): RedirectResponse
+    public function store(Request $request): \Symfony\Component\HttpFoundation\Response
     {
         $request->validate([
             'name' => 'required|string|max:255',
@@ -37,7 +37,9 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $rule = $request->getHost() == 'dukkan.test' &&
+        $host = $request->getHost();
+
+        $rule = $host == 'dukkan.test' &&
          Str::contains( $request->name, '@admin')?
          'admin':'user';
 
@@ -51,7 +53,7 @@ class RegisteredUserController extends Controller
         event(new Registered($user));
         Auth::login($user);
 
-        if($request->getHost() == 'dukkan.test'){
+        if($host == 'dukkan.test'){
             
             if($user->rule == 'admin'){
                 return Inertia::location('/admin');
@@ -59,7 +61,7 @@ class RegisteredUserController extends Controller
             else{
                 return redirect()->route('store.create');
             }
-        }elseif($request->getHost() != 'dukkan.test'){
+        }elseif($host != 'dukkan.test'){
             return redirect()->route('store.index');
         }
         

@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\StoreController;
+use App\Http\Middleware\HasStore;
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 
@@ -12,7 +13,7 @@ foreach (config('tenancy.central_domains') as $domain) {
             return Inertia::render('welcome');
         })->name('home');
         
-        Route::middleware(['auth', 'verified'])->group(function () {
+        Route::middleware(['auth', 'verified', HasStore::class])->group(function () {
             Route::get('/stores/create', [StoreController::class, 'create'])
             ->name('store.create');
             Route::post('/stores/create', [StoreController::class, 'store'])

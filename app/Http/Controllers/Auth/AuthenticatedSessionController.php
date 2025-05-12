@@ -36,21 +36,21 @@ class AuthenticatedSessionController extends Controller
 
         $user = Auth::user();
 
+        $host = $request->getHost();
 
-        if($request->getHost() == 'dukkan.test'){
+        if($host == 'dukkan.test'){
             if($user->rule == 'admin'){
                 return Inertia::location('/admin');
             }
             elseif($user->rule== 'vendor' && $domain = Tenant::get()->firstWhere('email', $user->email)->domains->first()->domain){
-                return Inertia::location('http://' . $domain . '/vendor');
+                return Inertia::location('http://' . $domain .':8000'.'/vendor');
             }
-        }elseif($request->getHost() != 'dukkan.test'){
+        }elseif($host != 'dukkan.test'){
             return $user->rule == 'vendor'? Inertia::location('/vendor'):
             Inertia::render('store/index');
         }
-        
 
-        return redirect()->intended(route('home', absolute: false));
+        return redirect('/');
     }
 
     /**

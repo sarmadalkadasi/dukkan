@@ -37,12 +37,6 @@ class StoreController extends Controller
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:3072',
         ]);
 
-        if (!$request->user()) {
-            return redirect()->route('login')->with('error', 'You must be logged in to create a store.');
-        } elseif (Tenant::where('email', $request->user()->email)->exists()) {
-            return redirect()->route('home')->with('error', 'You already have a store associated with this email.');
-        }
-
         $logoName = null;
 
         if ($logo = $request->file('logo')) {

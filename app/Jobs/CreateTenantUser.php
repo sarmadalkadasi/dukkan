@@ -6,8 +6,8 @@ use App\Models\Tenant;
 use App\Models\User;
 use Illuminate\Contracts\Queue\ShouldQueue;
 use Illuminate\Foundation\Queue\Queueable;
-// use Illuminate\Support\Facades\Auth;
-// use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Hash;
 
 class CreateTenantUser implements ShouldQueue
 {
@@ -22,41 +22,25 @@ class CreateTenantUser implements ShouldQueue
      * Execute the job.
      */
     public function handle(): void
-    {
-        $this->tenant->run(function (){
+    {$user = Auth::user();
 
-        //     $user = Auth::user();
-        //     try {
-
-        //         if ($user instanceof User && $user->rule !== 'admin') {
-        //             $user->rule = 'vendor';
-        //             $user->save();
-                    
-        //             User::create([
-        //                 'name' => $this->tenant->name,
-        //                 'email' => $this->tenant->email,
-        //                 'password' => $this->tenant->password,
-        //                 'rule' => 'vendor',
-        //             ]);
-        //         } else {
-        //             User::create([
-        //                 'name' => $this->tenant->name,
-        //                 'email' => $this->tenant->email,
-        //                 'password' => $this->tenant->password,
-        //                 'rule' => 'vendor',
-        //             ]);
-        //         }
-        //     } catch (\Exception $e) {
-        //         // Log the error or handle it as needed
-        //         Log::error('Failed to create or update user: ' . $e->getMessage());
-        //     }
-        // });
+        if ($user->rule !== 'admin') {
+            $this->updateUserRole($user);
+        }
+        $this->tenant->run(function () use ($user) {
 
             User::create([
                 'name' => $this->tenant->name,
                 'email' => $this->tenant->email,
-                'password' => $this->tenant->password,
+                'password' => $user->rule === 'admin' ? Hash::make($this->tenant->password) : $this->tenant->password,
+                'rule' => 'vendor',
             ]);
         });
+    }
+
+    public function updateUserRole($user): void
+    {
+        $user->rule = 'vendor';
+        $user->save();
     }
 }
