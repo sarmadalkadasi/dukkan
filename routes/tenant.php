@@ -24,9 +24,14 @@ Route::middleware([
     InitializeTenancyByDomain::class,
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
+
     Route::get('/', function () {
         return Inertia::render('store/index');
     })->name('store.index');
+
+    Route::get('/details', function () {
+        return Inertia::render('product/details');
+    })->name('product.details');
 
     require __DIR__.'/settings.php';
     require __DIR__.'/auth.php';
