@@ -28,6 +28,7 @@ class VendorPanelProvider extends PanelProvider
         return $panel
             ->id('vendor')
             ->path('vendor')
+            ->sidebarWidth('14rem')
             ->colors([
                 'primary' => Color::Blue,
             ])
