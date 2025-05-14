@@ -10,7 +10,7 @@ const Navbar = () => {
     const [isVisible, setIsVisible] = useState(false);
 
     return (
-        <div className="xl:32 2xl:64 relative h-20 px-4 md:px-8 lg:px-16">
+        <div className="xl:32 2xl:64 relative h-20 px-4 md:px-8 lg:px-16 dark:">
             {/*Small screens* */}
             <div className="flex h-full items-center justify-between md:hidden">
                 <a href="/" className="flex items-center gap-3">
@@ -47,7 +47,7 @@ const Navbar = () => {
                         <a href="/">Contact</a>
                     </div>
                 </div>
-                <div className="flex w-2/3 items-center justify-between gap-8 xl:w-1/2">
+                <div className="flex w-2/3 items-center justify-between gap-8 xl:w-1/2 ">
                     <SearchBar />
                     <NavIcons />
                 </div>
