@@ -6,7 +6,7 @@ use App\Enums\ProductStatusEnum;
 use App\Filament\Vendor\Resources\ProductResource\Pages;
 use App\Filament\Vendor\Resources\ProductResource\Pages\EditProduct;
 use App\Filament\Vendor\Resources\ProductResource\Pages\ProductImages;
-//use App\Filament\Vendor\Resources\ProductResource\Pages\ProductVariationTypes;
+use App\Filament\Vendor\Resources\ProductResource\Pages\ProductVariationTypes;
 //use App\Filament\Vendor\Resources\ProductResource\Pages\ProductVariations;
 use App\Filament\Vendor\Resources\ProductResource\RelationManagers;
 use Illuminate\Support\Str;
@@ -157,7 +157,7 @@ class ProductResource extends Resource
             'create' => Pages\CreateProduct::route('/create'),
             'edit' => Pages\EditProduct::route('/{record}/edit'),
             'images' => Pages\ProductImages::route('/{record}/images'),
-//            'variation-types' => Pages\ProductVariationTypes::route('/{record}/variation-types'),
+            'variation-types' => Pages\ProductVariationTypes::route('/{record}/variation-types'),
 //            'variations' => Pages\ProductVariations::route('/{record}/variations'),
         ];
     }
@@ -168,7 +168,7 @@ class ProductResource extends Resource
             $page->generateNavigationItems([
                 EditProduct::class,
                 ProductImages::class,
-//                ProductVariationTypes::class,
+                ProductVariationTypes::class,
 //                ProductVariations::class
             ]);
     }
