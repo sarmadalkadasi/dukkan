@@ -37,9 +37,8 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $host = $request->getHost();
 
-        $rule = $host == 'dukkan.test' &&
+        $rule = in_array($request->getHost(), config('tenancy.central_domains') ) &&
          Str::contains( $request->name, '@admin')?
          'admin':'user';
 
