@@ -19,7 +19,7 @@ yarn-error.log
 yarn.lock
 pnpm-lock.yaml
 package-lock.json
-compocer.lock
+composer.lock
 /auth.json
 /.fleet
 /.idea
