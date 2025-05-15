@@ -28,7 +28,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): Response
+    public function store(LoginRequest $request): \Symfony\Component\HttpFoundation\Response
     {
         $request->authenticate();
 
@@ -38,19 +38,16 @@ class AuthenticatedSessionController extends Controller
 
         $host = $request->getHost();
 
-        if($host == 'dukkan.test'){
+        if(in_array($host, config('tenancy.central_domains'))){
             if($user->rule == 'admin'){
                 return Inertia::location('/admin');
             }
             elseif($user->rule== 'vendor' && $domain = Tenant::get()->firstWhere('email', $user->email)->domains->first()->domain){
                 return Inertia::location('http://' . $domain .':8000'.'/vendor');
             }
-        }elseif($host != 'dukkan.test'){
-            return $user->rule == 'vendor'? Inertia::location('/vendor'):
-            Inertia::render('store/index');
         }
-
-        return redirect('/');
+        return $user->rule == 'vendor'? Inertia::location('/vendor') :
+            Inertia::location('/');
     }
 
     /**
