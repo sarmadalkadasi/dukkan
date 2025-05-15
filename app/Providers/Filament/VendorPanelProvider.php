@@ -43,6 +43,9 @@ class VendorPanelProvider extends PanelProvider
                 Widgets\FilamentInfoWidget::class,
             ])
             ->middleware([
+                'universal',
+                InitializeTenancyByDomain::class,
+                PreventAccessFromCentralDomains::class,
                 EncryptCookies::class,
                 AddQueuedCookiesToResponse::class,
                 StartSession::class,
@@ -52,11 +55,6 @@ class VendorPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-            ])->middleware([
-                // Custom middlewares
-                'universal',
-                InitializeTenancyByDomain::class,
-                PreventAccessFromCentralDomains::class,
             ], isPersistent: true)
             ->authMiddleware([
                 Authenticate::class,

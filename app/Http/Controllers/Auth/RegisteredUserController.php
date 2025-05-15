@@ -50,19 +50,16 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
         Auth::login($user);
+        $host = $request->getHost();
 
-        if($host == 'dukkan.test'){
-            
+        if(in_array($host, config('tenancy.central_domains'))){
             if($user->rule == 'admin'){
                 return Inertia::location('/admin');
             }
             else{
                 return redirect()->route('store.create');
             }
-        }elseif($host != 'dukkan.test'){
-            return redirect()->route('store.index');
         }
-        
         return redirect('/');
     }
 }
