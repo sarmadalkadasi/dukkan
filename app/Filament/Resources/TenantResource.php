@@ -17,7 +17,15 @@ class TenantResource extends Resource
 {
     protected static ?string $model = Tenant::class;
 
-    protected static ?string $navigationIcon = 'heroicon-o-rectangle-stack';
+    protected static ?string $navigationLabel = 'Stores';
+
+    protected static ?string $label = 'Store';
+
+    protected static ?string $slug = 'stores';
+
+    protected static ?string $pluralLabel = 'Stores';
+
+    protected static ?string $navigationIcon = 'heroicon-o-building-storefront';
 
     public static function form(Form $form): Form
     {
