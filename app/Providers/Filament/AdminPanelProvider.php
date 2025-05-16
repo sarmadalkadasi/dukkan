@@ -2,6 +2,8 @@
 
 namespace App\Providers\Filament;
 
+use App\Filament\Resources\TenantResource\Widgets\BlogTenantChart;
+use App\Filament\Resources\TenantResource\Widgets\BlogUsersChart;
 use App\Http\Middleware\PreventAccessFromTenantDomains;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -40,6 +42,8 @@ class AdminPanelProvider extends PanelProvider
             ->widgets([
                 Widgets\AccountWidget::class,
                 Widgets\FilamentInfoWidget::class,
+                BlogTenantChart::class,
+                BlogUsersChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,
