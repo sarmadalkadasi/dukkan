@@ -47,16 +47,21 @@ export default function CreateStore() {
                     {/* رابط المتجر */}
                     <div className="grid gap-2">
                         <Label htmlFor="store-domain">الرابط (الدومين)</Label>
-                        <Input
-                            id="store-domain"
-                            type="text"
-                            required
-                            tabIndex={2}
-                            autoComplete="off"
-                            placeholder="store.dukkan.test"
-                            disabled={processing}
-                            onChange={(e) => setData({ ...data, domain: e.target.value })}
-                        />
+                        <div className="flex items-center " dir='ltr'>
+                            <span className="px-3 py-1.5 bg-gray-200 dark:text-background rounded-l-md">https://</span>
+                            <Input
+                                id="store-domain"
+                                type="text"
+                                required
+                                tabIndex={2}
+                                autoComplete="off"
+                                placeholder="Store Name"
+                                disabled={processing}
+                                className="rounded-none"
+                                onChange={(e) => setData({ ...data, domain: e.target.value + '.dukkan.test' })}
+                            />
+                            <span className="px-3 py-1.5 bg-gray-200 light:text-foreground dark:text-background rounded-r-md">.example.com</span>
+                        </div>
                         <InputError message={errors.domain} className="mt-2" />
                     </div>
 
