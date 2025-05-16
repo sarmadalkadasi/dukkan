@@ -99,7 +99,7 @@ const CategoryList = () => { //{ storeId }: { storeId: number }
         <a
           href={`/list?cat=${item.slug}`}
           key={item.id}
-          className="flex flex-col items-center justify-center w-60 h-96 bg-white rounded-lg shadow-md transition-transform transform hover:scale-105 flex-shrink-0"
+          className="flex flex-col items-center justify-center w-60 h-96 light:bg-white dark:bg-accent rounded-lg shadow-md transition-transform transform hover:scale-105 flex-shrink-0"
         >
           <div className="relative bg-slate-100 w-full h-72">
         <img
@@ -109,7 +109,7 @@ const CategoryList = () => { //{ storeId }: { storeId: number }
           className="object-cover w-full h-full select-none"
         />
           </div>
-          <h1 className="text-center text-lg font-semibold mt-2">
+          <h1 className="text-center text-lg font-semibold mt-5 text-foreground">
         {item.name}
           </h1>
         </a>

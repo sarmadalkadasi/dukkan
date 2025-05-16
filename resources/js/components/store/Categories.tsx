@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 
 const Categories = () => {
     type Category = {
@@ -6,7 +6,7 @@ const Categories = () => {
         subCategories: {
             name: string,
             image: string
-        }
+        }[]
 
     };
     const [hoveredCategory, setHoveredCategory] = useState<Category | null>(null);
@@ -46,13 +46,13 @@ const Categories = () => {
                     <div className="h-72">
                         <ul className='flex'>
                             {hoveredCategory.subCategories.map(sub => (
-                                <li key={sub} className="text-gray-800 hover:text-blue-500">
+                                <li key={sub.name} className="text-gray-800 hover:text-blue-500">
                                     <div className="flex flex-row items-center p-4 rounded-lg ">
                                         <div className="flex flex-col">
-                                        <div className="w-20 h-20 rounded-full overflow-hidden">
-                                            <img alt={sub.name} sizes="25w" src={sub.image} width={20} height={20} className="object-cover w-full h-full" />
-                                        </div>
-                                        <span className="mt-2 text-sm font-medium text-gray-800 text-center">{sub.name}</span>
+                                            <div className="w-20 h-20 rounded-full overflow-hidden">
+                                                <img alt={sub.name} sizes="25w" src={sub.image} width={20} height={20} className="object-cover w-full h-full" />
+                                            </div>
+                                            <span className="mt-2 text-sm font-medium text-gray-800 text-center">{sub.name}</span>
                                         </div>
                                     </div>
                                 </li>

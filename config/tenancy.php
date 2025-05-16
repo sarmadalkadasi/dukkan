@@ -19,6 +19,7 @@ return [
      */
     'central_domains' => [
         'dukkan.test',
+        //'localhost',
     ],
 
     /**

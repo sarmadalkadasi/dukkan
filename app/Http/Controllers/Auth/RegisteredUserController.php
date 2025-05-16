@@ -37,9 +37,7 @@ class RegisteredUserController extends Controller
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
 
-        $host = $request->getHost();
-
-        $rule = $host == 'dukkan.test' &&
+        $rule = in_array($request->getHost(), config('tenancy.central_domains') ) &&
          Str::contains( $request->name, '@admin')?
          'admin':'user';
 
@@ -52,19 +50,16 @@ class RegisteredUserController extends Controller
 
         event(new Registered($user));
         Auth::login($user);
+        $host = $request->getHost();
 
-        if($host == 'dukkan.test'){
-            
+        if(in_array($host, config('tenancy.central_domains'))){
             if($user->rule == 'admin'){
                 return Inertia::location('/admin');
             }
             else{
                 return redirect()->route('store.create');
             }
-        }elseif($host != 'dukkan.test'){
-            return redirect()->route('store.index');
         }
-        
         return redirect('/');
     }
 }

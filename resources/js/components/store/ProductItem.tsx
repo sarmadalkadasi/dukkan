@@ -4,7 +4,7 @@ const ProductItem = () => {
     title: "Test image"
   }
   return (
-    <a href="/test" className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]">
+    <a href={'/details'} className="w-full flex flex-col gap-4 sm:w-[45%] lg:w-[22%]">
       <div className="relative w-full h-80">
       <img alt={item.title} sizes="25w" src={item.image} className="absolute object-cover w-full h-full rounded-md z-10 hover:opacity-0 transition-opacity easy duration-500"/>
       <img alt={item.title}  sizes="25w" src="/0689a92be5.jpg" className="absolute object-cover w-full h-full rounded-md"/>
