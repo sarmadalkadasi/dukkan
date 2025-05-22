@@ -60,7 +60,7 @@ export default function CreateStore() {
                                 className="rounded-none"
                                 onChange={(e) => setData({ ...data, domain: e.target.value + '.dukkan.test' })}
                             />
-                            <span className="px-3 py-1.5 bg-gray-200 light:text-foreground dark:text-background rounded-r-md">.example.com</span>
+                            <span className="px-3 py-1.5 bg-gray-200 light:text-foreground dark:text-background rounded-r-md">.dukkan.test</span>
                         </div>
                         <InputError message={errors.domain} className="mt-2" />
                     </div>
