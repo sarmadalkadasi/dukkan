@@ -7,6 +7,8 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class VariationType extends Model
 {
+    protected $guarded = [];
+
     public $timestamps = false;
 
     public function options(): HasMany

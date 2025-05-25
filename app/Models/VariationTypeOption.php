@@ -9,6 +9,10 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class VariationTypeOption extends Model implements HasMedia
 {
+    protected $guarded = [];
+
+    public $timestamps = false;
+
     use InteractsWithMedia;
 
     public function registerMediaConversions(?Media $media = null): void

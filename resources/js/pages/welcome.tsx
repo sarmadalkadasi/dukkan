@@ -13,10 +13,10 @@ import { useInitials } from '@/hooks/use-initials';
 
 
 const navigation = [
-    { name: 'المنتج', href: '#' },
-    { name: 'الميزات', href: '#' },
-    { name: 'السوق', href: '#' },
-    { name: 'الشركة', href: '#' },
+    { name: 'من نحن', href: '#footer' },
+    { name: 'الاشتراكات والخطط', href: '#price' },
+    { name: 'الميزات', href: '#features' },
+    { name: 'الرئيسية', href: '/' },
 ]
 
 
@@ -350,7 +350,7 @@ export default function Welcome() {
 
 
             {/* Features*/}
-            <div className="overflow-hidden bg-background py-14 sm:py-32" dir={"rtl"}>
+            <div id={"features"} className="overflow-hidden bg-background py-14 sm:py-32" dir={"rtl"}>
                 <div className="mx-auto max-w-7xl px-6 lg:px-8">
                     <div className="mx-auto grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:gap-y-20 lg:mx-0 lg:max-w-none lg:grid-cols-2">
                         <div className="lg:pt-4 lg:pr-8">
@@ -387,7 +387,7 @@ export default function Welcome() {
             </div>
 
             {/* Pricing*/}
-            <div className="relative isolate bg-background px-6 py-24 sm:py-32 lg:px-8" dir={"rtl"}>
+            <div id={"price"} className="relative isolate bg-background px-6 py-24 sm:py-32 lg:px-8 duration-300" dir={"rtl"}>
                 <div aria-hidden="true" className="absolute inset-x-0 -top-3 -z-10 transform-gpu overflow-hidden px-36 blur-3xl">
                     <div
                         style={{
@@ -493,11 +493,11 @@ export default function Welcome() {
                         <figcaption className="mt-8">
                             <img
                                 alt=""
-                                src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80"
+                                src="/5879645065712879809_121.jpg"
                                 className="mx-auto h-14 w-14 rounded-full"
                             />
                             <div className="mt-4 flex items-center justify-center space-x-2 text-sm">
-                                <div className="font-medium light:text-gray-800">جوديث بلاك</div>
+                                <div className="font-medium light:text-gray-800">Amr Fawaz</div>
                                 <svg width={2} height={2} viewBox="0 0 2 2" aria-hidden="true" className="fill-gray-800">
                                     <circle r={1} cx={1} cy={1} />
                                 </svg>
@@ -509,7 +509,7 @@ export default function Welcome() {
             </section>
 
             {/* Footer */}
-            <footer className="relative bg-blue-100 dark:bg-gray-900 pt-18 pb-8" dir={"rtl"}>
+            <footer id={"footer"} className="relative bg-blue-100 dark:bg-gray-900 pt-18 pb-8" dir={"rtl"}>
                 <div className="container mx-auto px-4">
                     <div className="flex flex-wrap text-right lg:text-right pb-8">
                         <div className="w-full lg:w-6/12 px-4">

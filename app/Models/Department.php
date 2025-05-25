@@ -7,6 +7,7 @@ use Illuminate\Database\Eloquent\Relations\HasMany;
 
 class Department extends Model
 {
+    protected $guarded = [];
     public function categories(): HasMany
     {
         return $this->hasMany(Category::class);

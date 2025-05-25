@@ -7,7 +7,7 @@ use App\Filament\Vendor\Resources\ProductResource\Pages;
 use App\Filament\Vendor\Resources\ProductResource\Pages\EditProduct;
 use App\Filament\Vendor\Resources\ProductResource\Pages\ProductImages;
 use App\Filament\Vendor\Resources\ProductResource\Pages\ProductVariationTypes;
-//use App\Filament\Vendor\Resources\ProductResource\Pages\ProductVariations;
+use App\Filament\Vendor\Resources\ProductResource\Pages\ProductVariations;
 use App\Filament\Vendor\Resources\ProductResource\RelationManagers;
 use Illuminate\Support\Str;
 use App\Models\Product;
@@ -158,7 +158,7 @@ class ProductResource extends Resource
             'edit' => Pages\EditProduct::route('/{record}/edit'),
             'images' => Pages\ProductImages::route('/{record}/images'),
             'variation-types' => Pages\ProductVariationTypes::route('/{record}/variation-types'),
-//            'variations' => Pages\ProductVariations::route('/{record}/variations'),
+            'variations' => Pages\ProductVariations::route('/{record}/variations'),
         ];
     }
 
@@ -169,7 +169,7 @@ class ProductResource extends Resource
                 EditProduct::class,
                 ProductImages::class,
                 ProductVariationTypes::class,
-//                ProductVariations::class
+                ProductVariations::class
             ]);
     }
 
