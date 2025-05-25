@@ -10,8 +10,15 @@ use Spatie\MediaLibrary\MediaCollections\Models\Media;
 
 class Product extends Model implements HasMedia
 {
-
     use InteractsWithMedia;
+
+    protected $guarded = [];
+    
+    public function registerMediaCollections(): void
+    {
+        $this->addMediaCollection('images')
+        ->useDisk('tenant_media');
+    }
 
     public function registerMediaConversions(?Media $media = null): void
     {
