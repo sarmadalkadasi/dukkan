@@ -32,8 +32,8 @@ return [
 
         'tenant_media' => [
             'driver' => 'local',
-            'root' => storage_path('tenant' . tenant('id') . '/media'),
-            'url' => env('APP_URL') . '/storage/tenant' . tenant('id') . '/media',
+            'root' => storage_path('app/public'),
+            'url' => env('APP_URL') . '/storage',
             'visibility' => 'public',
         ],
 

@@ -23,10 +23,6 @@ class PrepareTenantStorage implements ShouldQueue
         $tenantKey = $this->tenant->getTenantKey();
         $dirs = [
             "framework/cache",
-            "framework/sessions",
-            "framework/views",
-            "logs",
-            "media",
         ];
         foreach ($dirs as $dir) {
             $path = storage_path("tenant{$tenantKey}/{$dir}");

@@ -9,7 +9,7 @@ class TenantPathGenerator implements PathGenerator
 {
     public function getPath(Media $media): string
     {
-        $tenantId = tenancy()->tenant?->getTenantKey() ?? 'central';
+        $tenantId = tenant('id') ?? 'central';
         return "tenant{$tenantId}/media/{$media->id}/";
     }
 
