@@ -88,7 +88,7 @@ const NavIcons = () => {
             <Bell size={22} className="cursor-pointer text-[#1b1b18] dark:text-white" />
             <div className="relative cursor-pointer" onClick={() => setIsCartOpen((prev) => !prev)}>
                 <ShoppingCart size={24} className="h-6 w-6 text-[#1b1b18] dark:text-white" />
-                <div className="bg-lightPink absolute -top-4 -right-4 h-6 w-6 rounded-full text-center text-sm text-white">2</div>
+                <div className="bg-blue-700 absolute -top-5 -right-4 h-6 w-5 rounded-full text-center text-white">2</div>
             </div>
             {isCartOpen && <CartModal />}
         </div>
