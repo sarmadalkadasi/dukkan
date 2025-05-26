@@ -41,3 +41,32 @@ export interface User {
     updated_at: string;
     [key: string]: unknown; // This allows for additional properties...
 }
+export type Product = {
+    id: number;
+    title: string;
+    slug: string;
+    price: number;
+    quantity: number;
+    image: string;
+    user: {
+        id: number;
+        name: string;
+    };
+    department: {
+        id: number;
+        name: string;
+    };
+};
+
+export type PaginationProps<T> = {
+    data: Array<T>;
+};
+
+export type PageProps<
+    T extends Record<string, unknown> = Record<string, unknown>,
+> = T & {
+    auth: {
+        user: User;
+    };
+    ziggy: Config & { location: string };
+};

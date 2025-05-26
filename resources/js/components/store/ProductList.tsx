@@ -15,10 +15,10 @@ const ProductList = () => { //{ storeId }: { storeId: number }
 
   return (
     <div className="flex flex-wrap gap-x-8 gap-y-16 justify-between">
-        <ProductItem/>
-        <ProductItem/>
-        <ProductItem/>
-        <ProductItem/>
+        {/*<ProductItem/>*/}
+        {/*<ProductItem/>*/}
+        {/*<ProductItem/>*/}
+        {/*<ProductItem/>*/}
         {/* {products.map((product) => (
           <ProductItem key={product.id} product={product} />
         ))} */}

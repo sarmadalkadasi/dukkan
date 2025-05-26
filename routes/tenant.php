@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
+use App\Http\Controllers\ProductController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
@@ -25,9 +26,14 @@ Route::middleware([
     PreventAccessFromCentralDomains::class,
 ])->group(function () {
 
-    Route::get('/', function () {
-        return Inertia::render('store/index');
-    })->name('store.index');
+    Route::get('/', [ProductController::class, 'index'])
+        ->name('store.index');
+    Route::get('/product/{product:slug}', [ProductController::class, 'show'])
+        ->name('product.show');
+
+//    Route::get('/', function () {
+//        return Inertia::render('store/index');
+//    })->name('store.index');
 
     Route::get('/details', function () {
         return Inertia::render('product/details');

@@ -1,5 +1,5 @@
 @import 'tailwindcss';
-
+@plugin "daisyui";
 @plugin 'tailwindcss-animate';
 
 @source '../views';
@@ -111,7 +111,7 @@
     --sidebar-border: oklch(0.92 0.004 286.32);
     --sidebar-ring: oklch(0.623 0.214 259.815);
   }
-  
+
   .dark {
     --background: oklch(0.208 0.042 265.755);
     --foreground: oklch(0.985 0 0);
@@ -145,7 +145,7 @@
     --sidebar-border: oklch(1 0 0 / 10%);
     --sidebar-ring: oklch(0.488 0.243 264.376);
 }
-  
+
 
 .el-messiri {
     font-family: "El Messiri", sans-serif;
@@ -157,7 +157,7 @@
     font-weight: 700; /* Bold */
     font-style: normal;
   }
-  
+
   .el-messiri-regular {
     font-family: "El Messiri", sans-serif;
     font-optical-sizing: auto;
