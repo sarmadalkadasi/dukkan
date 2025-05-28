@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Pages;
+namespace App\Filament\Vendor\Pages;
 
 use App\Livewire\SubscriptionInformationWidget;
 use Filament\Forms\Components\Grid;
@@ -26,6 +26,13 @@ class Settings extends Page
         $this->settings = [
             'name' => auth()->user()->name,
             'email' => auth()->user()->email,
+        ];
+    }
+
+    protected function getHeaderWidgets(): array
+    {
+        return [
+            SubscriptionInformationWidget::class,
         ];
     }
 

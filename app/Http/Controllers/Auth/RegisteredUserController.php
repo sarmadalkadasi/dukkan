@@ -46,6 +46,7 @@ class RegisteredUserController extends Controller
             'email' => $request->email,
             'password' => Hash::make($request->password),
             'rule' => $rule,
+            'trial_ends_at' => now()->addDays(14),
         ]);
 
         event(new Registered($user));
