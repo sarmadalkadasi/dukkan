@@ -9,7 +9,7 @@ use Flowframe\Trend\TrendValue;
 
 class BlogUsersChart extends ChartWidget
 {
-    protected static ?string $heading = 'Blog Users Overview'; 
+    protected static ?string $heading = 'Users Overview'; 
     protected static string $color = 'primary';
 
     protected function getData(): array

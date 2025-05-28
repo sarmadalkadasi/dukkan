@@ -1,20 +1,20 @@
 <?php
 
-namespace App\Filament\Resources\TenantResource\Widgets;
+namespace App\Filament\Vendor\Widgets;
 
-use App\Models\Tenant;
+use App\Models\User;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
 
-class BlogTenantChart extends ChartWidget
+class BlogCustomerChart extends ChartWidget
 {
-    protected static ?string $heading = 'Stores Overview'; 
+    protected static ?string $heading = 'Customers Overview'; 
     protected static string $color = 'primary';
 
     protected function getData(): array
     {
-        $data = Trend::model(Tenant::class)
+        $data = Trend::model(User::class)
         ->between(
             start: now()->startOfYear(),
             end: now()->endOfYear(),
@@ -35,6 +35,6 @@ class BlogTenantChart extends ChartWidget
 
     protected function getType(): string
     {
-        return 'bar';
+        return 'line';
     }
 }

@@ -27,7 +27,7 @@ class ProductResource extends Resource
 {
     protected static ?string $model = Product::class;
 
-    protected static ?string $navigationIcon = 'heroicon-s-queue-list';
+    protected static ?string $navigationIcon = 'heroicon-o-squares-plus';
 
     protected static SubNavigationPosition $subNavigationPosition = SubNavigationPosition::End;
 
@@ -176,6 +176,11 @@ class ProductResource extends Resource
 //                ProductVariationTypes::class,
 //                ProductVariations::class
             ]);
+    }
+
+    public static function getNavigationBadge(): ?string
+    {
+        return static::getModel()::all()->count();
     }
 
 }
