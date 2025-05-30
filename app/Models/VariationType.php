@@ -13,6 +13,6 @@ class VariationType extends Model
 
     public function options(): HasMany
     {
-        return $this->hasMany(VariationTypeOption::class, 'variation_type_id'   );
+        return $this->hasMany(VariationTypeOption::class, 'variation_type_id');
     }
 }

@@ -31,6 +31,9 @@ Route::middleware([
     Route::get('/product/{product:slug}', [ProductController::class, 'show'])
         ->name('product.show');
 
+    Route::post('/cart/store/{product}', function () {
+
+    })->name('cart.store');
 //    Route::get('/', function () {
 //        return Inertia::render('store/index');
 //    })->name('store.index');
