@@ -4,6 +4,9 @@ namespace App\Providers\Filament;
 
 use App\Filament\Resources\TenantResource\Widgets\BlogTenantChart;
 use App\Filament\Resources\TenantResource\Widgets\BlogUsersChart;
+use App\Filament\Widgets\BlogTenantChart as WidgetsBlogTenantChart;
+use App\Filament\Widgets\BlogUsersChart as WidgetsBlogUsersChart;
+use App\Filament\Widgets\StateOverView;
 use App\Http\Middleware\PreventAccessFromTenantDomains;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
@@ -20,7 +23,6 @@ use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
 use Illuminate\Routing\Middleware\SubstituteBindings;
 use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
-use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
 class AdminPanelProvider extends PanelProvider
 {
@@ -38,12 +40,10 @@ class AdminPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Widgets'), for: 'App\\Filament\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
-                BlogTenantChart::class,
-                BlogUsersChart::class,
+                StateOverView::class,
+                WidgetsBlogTenantChart::class,
+                WidgetsBlogUsersChart::class,
             ])
             ->middleware([
                 EncryptCookies::class,

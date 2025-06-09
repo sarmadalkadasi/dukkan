@@ -20,6 +20,7 @@ class CreateTenantsTable extends Migration
             $table->string('name');
             $table->string('email')->unique();
             $table->string('password');
+            $table->boolean('isActive')->default(true);
             $table->timestamps();
             $table->json('data')->nullable();
         });

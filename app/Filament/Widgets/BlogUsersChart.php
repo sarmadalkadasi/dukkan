@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\TenantResource\Widgets;
+namespace App\Filament\Widgets;
 
 use App\Models\User;
 use Filament\Widgets\ChartWidget;
@@ -25,7 +25,7 @@ class BlogUsersChart extends ChartWidget
         return [
             'datasets' => [
                 [
-                    'label' => 'Blog Stores',
+                    'label' => 'Blog Users',
                     'data' => $data->map(fn (TrendValue $value) => $value->aggregate),
                 ],
             ],

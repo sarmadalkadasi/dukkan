@@ -13,18 +13,29 @@ class SubscriptionInformationWidget extends Widget
     public Carbon|string|null $trialEndsAt = null;
     public Carbon|string|null $subscriptionRenewsAt = null;
     public Carbon|string|null $subscriptionEndsAt = null;
+    public string|null $subscriptionStatus = null;
     
     public function mount(): void
     {
+        $this->subscriptionStatus = auth()->user()->subscription('default')->stripe_status;
         $this->trialEndsAt = auth()->user()->trial_ends_at;
-        $this->subscriptionEndsAt = auth()->user()->subscription()->ends_at;
+        $subscription = auth()->user()->subscription();
         
-        if(!auth()->user()->trial_ends_at){
-            $this->subscriptionRenewsAt = Carbon::createFromTimestamp(
-                auth()->user()->subscription()
-                ->asStripeSubscription()
-                ->current_period_end
-            );
+        if ($subscription) {
+            $this->subscriptionEndsAt = $subscription->ends_at;
+            if(!auth()->user()->trial_ends_at){
+                $stripeSubscription = $subscription->asStripeSubscription();
+                if ($stripeSubscription) {
+                    $this->subscriptionRenewsAt = Carbon::createFromTimestamp(
+                        $stripeSubscription->current_period_end
+                    );
+                } else {
+                    $this->subscriptionRenewsAt = null;
+                }
+            }
+        } else {
+            $this->subscriptionEndsAt = null;
+            $this->subscriptionRenewsAt = null;
         }
     }
 
@@ -41,7 +52,7 @@ class SubscriptionInformationWidget extends Widget
     public function cancel(){
         return auth()
         ->user()
-        ->subscription()
-        ->cancel();
+        ->subscription('default')
+        ->cancelNow();
     }
 }
