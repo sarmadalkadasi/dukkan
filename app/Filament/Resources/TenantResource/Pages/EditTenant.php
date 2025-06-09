@@ -4,7 +4,7 @@ namespace App\Filament\Resources\TenantResource\Pages;
 
 
 use App\Filament\Resources\TenantResource;
-use Filament\Actions;
+use App\Models\Domain;
 use Filament\Actions\DeleteAction;
 use Filament\Resources\Pages\EditRecord;
 
@@ -26,8 +26,12 @@ class EditTenant extends EditRecord
 
     protected function mutateFormDataBeforeFill(array $data): array
     {
+        if (array_key_exists('domain', $data)) {
+            $data['domain'] = $this->modifyDomain($data['domain']);
+        }
+        $data['domain'] = Domain::where('tenant_id', $data['id'])->first()->domain;
         $data['domain'] = $this->modifyDomain($data['domain']);
-
+        
         return $data;
     }
 
