@@ -22,7 +22,7 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
     const [selectedOptions, setSelectedOptions] = useState<Record<number, VariationTypeOption>>([]);
 
     const images = useMemo(() => {
-        for (let typeId in selectedOptions) {
+        for (const typeId in selectedOptions) {
             const option = selectedOptions[typeId];
             if (option.images.length > 0) return option.images;
         }
@@ -34,7 +34,7 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
             .map(op => op.id)
             .sort();
 
-        for (let variation of product.variations) {
+        for (const variation of product.variations) {
             const optionIds = variation.variation_type_option_ids.sort();
             if (arraysAreEqual(selectedOptionIds, optionIds)) {
                 return {
@@ -50,7 +50,7 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
     }, [product, selectedOptions]);
 
     useEffect(() => {
-        for (let type of product.variationTypes) {
+        for (const type of product.variationTypes) {
             const selectedOptionId: number = variationOptions[type.id];
             console.log(selectedOptionId, type.options);
             chooseOption(
@@ -106,7 +106,7 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
 
     const renderProductVariationTypes = () => {
         return (
-            product.variationTypes.map((type, i) => (
+            product.variationTypes.map((type) => (
                 <div key={type.id}>
                     <b>{type.name}</b>
                     {type.type === 'Image' &&

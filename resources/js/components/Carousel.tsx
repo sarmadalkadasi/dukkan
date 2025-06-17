@@ -12,8 +12,8 @@ function Carousel({ images }: { images: Image[] }) {
         <>
             <div className="flex items-start gap-8">
                 <div className="flex flex-col items-center gap-2 py-2">
-                    {images.map((image, i) => (
-                        <button onClick={ev =>
+                    {images.map((image) => (
+                        <button onClick={() =>
                             setSelectedImage(image)}
                                 className={
                             "border-2" +

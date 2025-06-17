@@ -2,8 +2,6 @@
 
 import { useState } from "react";
 
-
-
 const ProductImages = ({ items }: { items: any }) => {
   const [index, setIndex] = useState(0);
 
