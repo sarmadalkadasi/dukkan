@@ -10,7 +10,7 @@ export default function ProductItem({ product }: { product: Product }) {
                     <img
                         src={product.image}
                         alt={product.title}
-                    className="aspect-square w-full object-cover"/>
+                    className="aspect-square object-cover"/>
                 </figure>
             </Link>
             <div className="card-body">

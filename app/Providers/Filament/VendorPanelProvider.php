@@ -33,7 +33,9 @@ class VendorPanelProvider extends PanelProvider
             ->sidebarWidth('14rem')
             ->colors([
                 'primary' => Color::Blue,
-            ])
+            ])->font('El Messiri')
+            ->brandLogo(asset('images/logo.png'))
+            ->favicon(asset('images/favicon.png'))
             ->discoverResources(in: app_path('Filament/Vendor/Resources'), for: 'App\\Filament\\Vendor\\Resources')
             ->discoverPages(in: app_path('Filament/Vendor/Pages'), for: 'App\\Filament\\Vendor\\Pages')
             ->pages([
