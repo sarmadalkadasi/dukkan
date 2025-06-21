@@ -1,6 +1,5 @@
 'use client';
 import { useState } from 'react';
-import AppLogoIcon from '../app-logo-icon';
 import Categories from './Categories';
 import Menu from './Menu';
 import NavIcons from './NavIcons';
@@ -13,8 +12,9 @@ const Navbar = () => {
         <div className="xl:32 2xl:64 relative h-20 px-4 md:px-8 lg:px-16 dark:">
             {/*Small screens* */}
             <div className="flex h-full items-center justify-between md:hidden">
+                <NavIcons/>
                 <a href="/" className="flex items-center gap-3">
-                    <AppLogoIcon aria-label="logo" />
+                    <img alt="Logo" src="/dukkan-logo.svg" className="h-12 w-auto" />
                     <h1 className="sr-only text-xl tracking-wide">Open Shop</h1>
                 </a>
                 <Menu />
