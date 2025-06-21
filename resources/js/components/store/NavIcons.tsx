@@ -9,7 +9,7 @@ import { UserInfo } from '../user-info';
 import CartModal from './CartModal';
 
 const NavIcons = () => {
-    const { auth } = usePage<SharedData>().props;
+    const { auth, totalPrice, totalQuantity } = usePage<SharedData>().props;
     const cleanup = useMobileNavigation();
     const [isCartOpen, setIsCartOpen] = useState(false);
 
@@ -88,7 +88,9 @@ const NavIcons = () => {
             <Bell size={22} className="cursor-pointer text-[#1b1b18] dark:text-white" />
             <div className="relative cursor-pointer" onClick={() => setIsCartOpen((prev) => !prev)}>
                 <ShoppingCart size={24} className="h-6 w-6 text-[#1b1b18] dark:text-white" />
-                <div className="bg-blue-700 absolute -top-5 -right-4 h-6 w-5 rounded-full text-center text-white">2</div>
+                <div className="bg-blue-700 absolute -top-5 -right-4 h-6 w-5 rounded-full text-center text-white">
+                    {totalQuantity}
+                </div>
             </div>
             {isCartOpen && <CartModal />}
         </div>

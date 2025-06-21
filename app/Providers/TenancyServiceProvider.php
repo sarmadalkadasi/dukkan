@@ -6,6 +6,7 @@ namespace App\Providers;
 
 use App\Jobs\CreateTenantUser;
 use App\Jobs\PrepareTenantStorage;
+use App\Services\CartService;
 use Illuminate\Support\Facades\Event;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\ServiceProvider;
@@ -96,9 +97,14 @@ class TenancyServiceProvider extends ServiceProvider
         ];
     }
 
-    public function register()
+    /**
+     * Register any tenant services.
+     */
+    public function register(): void
     {
-        //
+        $this->app->singleton(CartService::class, function () {
+            return new CartService();
+        });
     }
 
     public function boot()
