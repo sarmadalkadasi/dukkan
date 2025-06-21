@@ -139,7 +139,7 @@ export default function Welcome() {
                 <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
                     <div className="flex lg:flex-1">
                         <a href="#" className="-m-1.5 p-1.5">
-                            <span className="sr-only">Your Company</span>
+                            <span className="sr-only">Dukkan</span>
                             <img
                                 alt="Dukkan Logo"
                                 src="/dukkan-logo.svg"
@@ -209,7 +209,7 @@ export default function Welcome() {
                     <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
-                                <span className="sr-only">Your Company</span>
+                                <span className="sr-only">Dukkan</span>
                                 <img
                                     alt="Dukkan Logo"
                                     src="/dukkan-logo.svg"
@@ -219,7 +219,7 @@ export default function Welcome() {
                             <button
                                 type="button"
                                 onClick={() => setMobileMenuOpen(false)}
-                                className="-m-2.5 rounded-md p-2.5 text-gray-700"
+                                className="-m-2.5 rounded-md p-2.5 light:text-gray-700"
                             >
                                 <span className="sr-only">Close menu</span>
                                 <XMarkIcon aria-hidden="true" className="size-6" />
@@ -232,8 +232,8 @@ export default function Welcome() {
                                         <a
                                             key={item.name}
                                             href={item.href}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
-                                        >
+                                            className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold light:text-gray-900 hover:bg-gray-400"
+                                            >
                                             {item.name}
                                         </a>
                                     ))}
@@ -241,22 +241,20 @@ export default function Welcome() {
                                 <div className="py-6">
 
                                     {auth.user ? (
-
-
                                         <>
-                                            <a
-                                                href={'/admin'}
-                                                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                            <Link
+                                                href={route('profile.edit')}
+                                                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold light:text-gray-900 hover:bg-gray-400"
                                             >
-                                                Dashboard
-                                            </a>
+                                                الإعدادات
+                                            </Link>
                                             <Link
                                                 href={route('logout')}
                                                 method="post"
                                                 as="button"
-                                                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
+                                                className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold light:text-gray-900 hover:bg-gray-400"
                                             >
-                                                Log out
+                                                تسجيل خروج
                                             </Link>
                                         </>
 
@@ -266,13 +264,13 @@ export default function Welcome() {
                                                 href={route('login')}
                                                 className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                             >
-                                                Log in
+                                                تسجيل دخول
                                             </a>
                                             <a
                                                 href={route('register')}
                                                 className="-mx-3 block rounded-lg px-3 py-2.5 text-base/7 font-semibold text-gray-900 hover:bg-gray-50"
                                             >
-                                                Register
+                                                إنشاء حساب
                                             </a>
                                         </>
                                     )}
