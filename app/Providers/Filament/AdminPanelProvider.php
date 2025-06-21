@@ -2,8 +2,6 @@
 
 namespace App\Providers\Filament;
 
-use App\Filament\Resources\TenantResource\Widgets\BlogTenantChart;
-use App\Filament\Resources\TenantResource\Widgets\BlogUsersChart;
 use App\Filament\Widgets\BlogTenantChart as WidgetsBlogTenantChart;
 use App\Filament\Widgets\BlogUsersChart as WidgetsBlogUsersChart;
 use App\Filament\Widgets\StateOverView;
@@ -16,7 +14,6 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -57,9 +54,6 @@ class AdminPanelProvider extends PanelProvider
                 SubstituteBindings::class,
                 DisableBladeIconComponents::class,
                 DispatchServingFilamentEvent::class,
-            ])->middleware([
-                //Custom middlewares
-                'universal',
                 PreventAccessFromTenantDomains::class,
             ])
             ->authMiddleware([

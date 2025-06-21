@@ -5,7 +5,6 @@ namespace App\Providers\Filament;
 use App\Filament\Vendor\Widgets\BlogCustomerChart;
 use App\Filament\Vendor\Widgets\BlogOrderChart as WidgetsBlogOrderChart;
 use App\Filament\Vendor\Widgets\StateOverView;
-use App\Filament\Widgets\BlogOrderChart;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -30,6 +29,7 @@ class VendorPanelProvider extends PanelProvider
         return $panel
             ->id('vendor')
             ->path('vendor')
+            ->login()
             ->sidebarWidth('14rem')
             ->colors([
                 'primary' => Color::Blue,
@@ -48,7 +48,6 @@ class VendorPanelProvider extends PanelProvider
                 WidgetsBlogOrderChart::class,
             ])
             ->middleware([
-                'universal',
                 InitializeTenancyByDomain::class,
                 PreventAccessFromCentralDomains::class,
                 EncryptCookies::class,
@@ -63,6 +62,7 @@ class VendorPanelProvider extends PanelProvider
             ], isPersistent: true)
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->authGuard('vendor');
     }
 }
