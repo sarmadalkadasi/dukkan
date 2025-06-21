@@ -8,7 +8,7 @@ export default function ProductItem({ product }: { product: Product }) {
             <Link href={route('product.show', product.slug)}>
                 <figure>
                     <img
-                        src={product.image}
+                        src={product.image == ""||null ? "/product.png":product.image}
                         alt={product.title}
                     className="aspect-square object-cover"/>
                 </figure>
