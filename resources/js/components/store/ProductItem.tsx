@@ -23,7 +23,7 @@ export default function ProductItem({ product }: { product: Product }) {
     };
 
     return (
-        <div className="card bg-base-100 shadow-xl">
+        <div className="card bg-background shadow-xl">
             <Link href={route('product.show', product.slug)}>
                 <figure>
                     <img
@@ -46,7 +46,7 @@ export default function ProductItem({ product }: { product: Product }) {
                 </p>
                 <div className="card-actions mt-3 items-center justify-between">
                     <button onClick={addToCart} className="btn btn-primary">
-                        Add to Car
+                        Add to Cart
                     </button>
                     <span className="text-2xl">
                         <CurrencyFormatter amount={product.price} />
