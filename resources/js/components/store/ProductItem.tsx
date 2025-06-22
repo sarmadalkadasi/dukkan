@@ -26,7 +26,10 @@ export default function ProductItem({ product }: { product: Product }) {
         <div className="card bg-base-100 shadow-xl">
             <Link href={route('product.show', product.slug)}>
                 <figure>
-                    <img src={product.image} alt={product.title} className="aspect-square object-cover" />
+                    <img
+                        src={product.image == ""||null ? "/product.png":product.image}
+                        alt={product.title}
+                    className="aspect-square object-cover"/>
                 </figure>
             </Link>
             <div className="card-body">
