@@ -2,6 +2,8 @@
 
 namespace App\Http\Middleware;
 
+use App\Models\CartItem;
+use App\Services\CartService;
 use Illuminate\Foundation\Inspiring;
 use Illuminate\Http\Request;
 use Inertia\Middleware;
@@ -39,8 +41,15 @@ class HandleInertiaRequests extends Middleware
     {
         [$message, $author] = str(Inspiring::quotes()->random())->explode('-');
 
+        $cartService = app(CartService::class);
+        $totalQuantity = $cartService->getTotalQuantity();
+        $totalPrice = $cartService->getTotalPrice();
+
+        $cartItems = $cartService->getCartItems();
+
         return [
             ...parent::share($request),
+            'csrf_token' => csrf_token(),
             'name' => config('app.name'),
             'quote' => ['message' => trim($message), 'author' => trim($author)],
             'auth' => [
@@ -50,6 +59,11 @@ class HandleInertiaRequests extends Middleware
                 ...(new Ziggy)->toArray(),
                 'location' => $request->url(),
             ],
+            'success' => session('success'),
+            'totalPrice' => $totalPrice,
+            'totalQuantity' => $totalQuantity,
+            'miniCartItems' => $cartItems,
+
             'sidebarOpen' => ! $request->hasCookie('sidebar_state') || $request->cookie('sidebar_state') === 'true',
         ];
     }

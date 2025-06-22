@@ -9,7 +9,7 @@ const Footer = () => {
             <div className="text-2xl tracking-wide">Open Shop</div>
           </a>
           <p>
-           Riydh, Saudi Arabia
+           Dhamar, Republic of Yemen.
           </p>
           <span className="font-semibold">info@openshop.com</span>
           <span className="font-semibold">+966531441305</span>

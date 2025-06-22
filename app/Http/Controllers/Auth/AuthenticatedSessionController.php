@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Auth;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\Auth\LoginRequest;
 use App\Models\Tenant;
+use App\Services\CartService;
 use Illuminate\Http\RedirectResponse;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -28,7 +29,7 @@ class AuthenticatedSessionController extends Controller
     /**
      * Handle an incoming authentication request.
      */
-    public function store(LoginRequest $request): \Symfony\Component\HttpFoundation\Response
+    public function store(LoginRequest $request, CartService $cartService): \Symfony\Component\HttpFoundation\Response
     {
         $request->authenticate();
 
@@ -45,7 +46,11 @@ class AuthenticatedSessionController extends Controller
             elseif($user->rule== 'vendor' && $domain = Tenant::get()->firstWhere('email', $user->email)->domains->first()->domain){
                 return Inertia::location('http://' . $domain .':8000'.'/vendor');
             }
+
+            $cartService->moveCartItemsToDatabase($user->id);
+
         }
+        $cartService->moveCartItemsToDatabase($user->id);
         return $user->rule == 'vendor'? Inertia::location('/vendor') :
             Inertia::location('/');
     }
