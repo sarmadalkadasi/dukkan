@@ -67,26 +67,26 @@ class SubscriptionsReport extends Report
                 // Summary Section
                 Body\Layout\BodyColumn::make()
                     ->schema([
-                        Text::make('ملخص الاشتراكات / Subscriptions Summary')
+                        Text::make('ملخص الاشتراكات ')
                             ->title()
                             ->primary(),
                         VerticalSpace::make(1),
-                        Text::make("إجمالي الاشتراكات: $totalSubscriptions | Total Subscriptions: $totalSubscriptions"),
-                        Text::make("نشطة: $activeCount | Active: $activeCount"),
-                        Text::make("ملغاة: $canceledCount | Canceled: $canceledCount"),
-                        Text::make("غير مكتملة: $incompleteCount | Incomplete: $incompleteCount"),
-                    ]),
+                        Text::make("إجمالي الاشتراكات: $totalSubscriptions"),
+                        Text::make("نشطة: $activeCount "),
+                        Text::make("ملغاة: $canceledCount "),
+                        Text::make("غير مكتملة: $incompleteCount"),
+                    ])->alignRight(),
                 VerticalSpace::make(2),
                 // Verification Table Section
                 Body\Layout\BodyColumn::make()
                     ->schema([
-                        Text::make('جدول التحقق / Verification Table')
+                        Text::make('جدول التحقق')
                             ->subtitle(),
                         Body\Table::make()
                             ->data(
                                 fn(?array $filters) => $this->verificationSummary($filters)
                             ),
-                    ]),
+                    ])->alignRight(),
             ]);
     }
 
@@ -99,7 +99,7 @@ class SubscriptionsReport extends Report
                         
                         Footer\Layout\FooterColumn::make()
                             ->schema([
-                                Text::make("Generated on: " . now()->format('Y-m-d H:i:s')),
+                                Text::make("تاريخ انشاء التقرير: " . now()->format('Y-m-d H:i:s')),
                             ])
                             ->alignRight(),
                     ]),
