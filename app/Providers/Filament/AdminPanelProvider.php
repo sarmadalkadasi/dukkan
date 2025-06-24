@@ -6,6 +6,7 @@ use App\Filament\Widgets\BlogTenantChart as WidgetsBlogTenantChart;
 use App\Filament\Widgets\BlogUsersChart as WidgetsBlogUsersChart;
 use App\Filament\Widgets\StateOverView;
 use App\Http\Middleware\PreventAccessFromTenantDomains;
+use EightyNine\Reports\ReportsPlugin;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -30,7 +31,7 @@ class AdminPanelProvider extends PanelProvider
             ->id('admin')
             ->path('admin')
             ->colors([
-                'primary' => Color::Orange,
+                'primary' => Color::Amber,
             ])->font('El Messiri')
             ->brandLogo(asset('images/logo.png'))
             ->favicon(asset('images/favicon.png'))
@@ -58,6 +59,9 @@ class AdminPanelProvider extends PanelProvider
             ])
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->plugins([
+                ReportsPlugin::make()
+            ]);;
     }
 }

@@ -71,7 +71,7 @@ class TenantResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
+            ->columns([  
                 Tables\Columns\TextColumn::make('id')
                     ->label('ID')
                     ->searchable()
