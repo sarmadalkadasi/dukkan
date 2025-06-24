@@ -77,17 +77,6 @@ class SubscriptionsReport extends Report
                         Text::make("غير مكتملة: $incompleteCount | Incomplete: $incompleteCount"),
                     ]),
                 VerticalSpace::make(2),
-                // Registration Table Section
-                Body\Layout\BodyColumn::make()
-                    ->schema([
-                        Text::make('جدول التسجيلات / Registration Table')
-                            ->subtitle(),
-                        Body\Table::make()
-                            ->data(
-                                fn(?array $filters) => $this->registrationSummary($filters)
-                            ),
-                    ]),
-                VerticalSpace::make(2),
                 // Verification Table Section
                 Body\Layout\BodyColumn::make()
                     ->schema([
