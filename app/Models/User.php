@@ -10,12 +10,11 @@ use Illuminate\Database\Eloquent\Relations\HasOne;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
 use Laravel\Cashier\Billable;
-use Stancl\Tenancy\Database\Concerns\BelongsToTenant;
 
 class User extends Authenticatable implements FilamentUser
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
-    use HasFactory, Notifiable, Billable, BelongsToTenant;
+    use HasFactory, Notifiable, Billable;
 
     /**
      * The attributes that are mass assignable.
@@ -46,6 +45,11 @@ class User extends Authenticatable implements FilamentUser
             'password'          => 'hashed',
             'trial_ends_at'     => 'datetime',
         ];
+    }
+    
+    protected function tenant(): HasOne
+    {
+        return $this->hasOne(Tenant::class);
     }
 
     public function canAccessPanel(Panel $panel): bool

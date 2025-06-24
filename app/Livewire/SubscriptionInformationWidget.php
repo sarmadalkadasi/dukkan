@@ -17,13 +17,15 @@ class SubscriptionInformationWidget extends Widget
     
     public function mount(): void
     {
-        $this->subscriptionStatus = auth()->user()->subscription('default')->stripe_status;
-        $this->trialEndsAt = auth()->user()->trial_ends_at;
-        $subscription = auth()->user()->subscription();
+        $storeOwner = tenant()->users()->first();
+
+        $this->trialEndsAt = $storeOwner->trial_ends_at;
+        $subscription = $storeOwner->subscription();
         
         if ($subscription) {
+            $this->subscriptionStatus = $storeOwner->subscription('default')->stripe_status;
             $this->subscriptionEndsAt = $subscription->ends_at;
-            if(!auth()->user()->trial_ends_at){
+            if(!$storeOwner->trial_ends_at){
                 $stripeSubscription = $subscription->asStripeSubscription();
                 if ($stripeSubscription) {
                     $this->subscriptionRenewsAt = Carbon::createFromTimestamp(
@@ -41,7 +43,9 @@ class SubscriptionInformationWidget extends Widget
 
 
     public function subscribe(){
-        return auth()->user()
+        $storeOwner = tenant()->users()->first();
+
+        return $storeOwner
         ->newSubscription('default', 'price_1RTEiBCirV1jVRkW9ctQl6ri')
         ->checkout([
             'success_url' => url('/vendor'),
