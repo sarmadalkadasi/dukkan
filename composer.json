@@ -19,6 +19,7 @@
         "laravel/tinker": "^2.10.1",
         "spatie/laravel-medialibrary": "^11.13",
         "stancl/tenancy": "^3.9",
+        "stephenjude/filament-two-factor-authentication": "^2.0",
         "tightenco/ziggy": "^2.4"
     },
     "require-dev": {
