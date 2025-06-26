@@ -2,7 +2,9 @@
 
 namespace App\Providers\Filament;
 
-use App\Http\Middleware\PreventAccessFromTenantDomains;
+use App\Filament\Vendor\Widgets\BlogCustomerChart;
+use App\Filament\Vendor\Widgets\BlogOrderChart as WidgetsBlogOrderChart;
+use App\Filament\Vendor\Widgets\StateOverView;
 use Filament\Http\Middleware\Authenticate;
 use Filament\Http\Middleware\AuthenticateSession;
 use Filament\Http\Middleware\DisableBladeIconComponents;
@@ -11,7 +13,6 @@ use Filament\Pages;
 use Filament\Panel;
 use Filament\PanelProvider;
 use Filament\Support\Colors\Color;
-use Filament\Widgets;
 use Illuminate\Cookie\Middleware\AddQueuedCookiesToResponse;
 use Illuminate\Cookie\Middleware\EncryptCookies;
 use Illuminate\Foundation\Http\Middleware\VerifyCsrfToken;
@@ -28,6 +29,7 @@ class VendorPanelProvider extends PanelProvider
         return $panel
             ->id('vendor')
             ->path('vendor')
+            ->login()
             ->sidebarWidth('14rem')
             ->colors([
                 'primary' => Color::Blue,
@@ -39,13 +41,13 @@ class VendorPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
-            ->discoverWidgets(in: app_path('Filament/Vendor/Widgets'), for: 'App\\Filament\\Vendor\\Widgets')
+            // ->discoverWidgets(in: app_path('Filament/Vendor/Widgets'), for: 'App\\Filament\\Vendor\\Widgets')
             ->widgets([
-                Widgets\AccountWidget::class,
-                Widgets\FilamentInfoWidget::class,
+                StateOverView::class,
+                BlogCustomerChart::class,
+                WidgetsBlogOrderChart::class,
             ])
             ->middleware([
-                'universal',
                 InitializeTenancyByDomain::class,
                 PreventAccessFromCentralDomains::class,
                 EncryptCookies::class,
@@ -60,6 +62,7 @@ class VendorPanelProvider extends PanelProvider
             ], isPersistent: true)
             ->authMiddleware([
                 Authenticate::class,
-            ]);
+            ])
+            ->authGuard('vendor');
     }
 }

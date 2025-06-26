@@ -24,14 +24,23 @@ const Menu = () => {
     }, []);
   return (
       <div>
-          <button id="menu-btn" className="z-[90] block hamburger md:hidden focus:outline-none mt-6" onClick={()=>setOpen((prev)=>!prev)}>
-              <span className="hamburger-top"></span>
-              <span className="hamburger-middle"></span>
-              <span className="hamburger-bottom"></span>
+          <button id="menu-btn" className="z-[90] text-black block hamburger md:hidden focus:outline-none" onClick={()=>setOpen((prev)=>!prev)}>
+            <span className="hamburger-top block w-6 h-0.5 bg-foreground mb-1 transition-all duration-300"></span>
+            <span className="hamburger-middle block w-6 h-0.5 bg-foreground mb-1 transition-all duration-300"></span>
+            <span className="hamburger-bottom block w-6 h-0.5 bg-foreground transition-all duration-300"></span>
           </button>
           {
             open &&(
-                <div className="absolute left-0 top-20 bg-black text-white w-full h-[calc(100vh-80px)] flex flex-col items-center justify-center gap-6 text-lg z-10">
+                <div className="fixed left-0 top-0 bg-black text-white w-full h-screen flex flex-col items-center justify-center gap-6 text-lg z-10">
+                    <button
+  id="menu-btn"
+  className="absolute right-4 top-8 z-[90] block w-6 text-white h-6 md:hidden focus:outline-none"
+  onClick={() => setOpen((prev) => !prev)}
+>
+  <span className="absolute top-1/2 left-0 w-6 h-0.5 bg-current transition-all duration-300 transform -translate-y-1/2 -rotate-45"></span>
+  <span className="absolute top-1/2 left-0 w-6 h-0.5 bg-current transition-all duration-300 transform -translate-y-1/2 rotate-45"></span>
+</button>
+
                 <a href="/">Home</a>
                 <a href="/">Shop</a>
                 <a href="/">Deals</a>

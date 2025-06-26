@@ -41,6 +41,7 @@ class CreateTenantUser implements ShouldQueue
     public function updateUserRole($user): void
     {
         $user->rule = 'vendor';
+        $user->tenant_id = $this->tenant->id;
         $user->save();
     }
 }

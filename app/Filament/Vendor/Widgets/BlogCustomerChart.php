@@ -1,15 +1,15 @@
 <?php
 
-namespace App\Filament\Resources\TenantResource\Widgets;
+namespace App\Filament\Vendor\Widgets;
 
 use App\Models\User;
 use Filament\Widgets\ChartWidget;
 use Flowframe\Trend\Trend;
 use Flowframe\Trend\TrendValue;
 
-class BlogUsersChart extends ChartWidget
+class BlogCustomerChart extends ChartWidget
 {
-    protected static ?string $heading = 'Blog Users Overview'; 
+    protected static ?string $heading = 'Customers Overview'; 
     protected static string $color = 'primary';
 
     protected function getData(): array

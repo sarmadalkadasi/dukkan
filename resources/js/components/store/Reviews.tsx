@@ -40,12 +40,12 @@ const Reviews = async ({ productId }: { productId: string }) => {
     ],
   };
 
-  return reviews.data.map((review: any) => (
-    <div className="flex flex-col gap-4" key={review.id}>
+  return reviews.data.map((review: object) => (
+    <div className="flex flex-col gap-4" key={review?.id}>
       {/* USER */}
       <div className="flex items-center gap-4 font-medium">
         <img
-          src={review.customer.avatar_url}
+          src={review?.customer?.avatar_url}
           alt=""
           width={32}
           height={32}

@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Filament\Resources\TenantResource\Widgets;
+namespace App\Filament\Widgets;
 
 use App\Models\Tenant;
 use Filament\Widgets\ChartWidget;
@@ -9,7 +9,7 @@ use Flowframe\Trend\TrendValue;
 
 class BlogTenantChart extends ChartWidget
 {
-    protected static ?string $heading = 'Blog Stores Overview'; 
+    protected static ?string $heading = 'Stores Overview'; 
     protected static string $color = 'primary';
 
     protected function getData(): array

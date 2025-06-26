@@ -2,7 +2,7 @@
 
 namespace App\Filament\Pages;
 
-use Dom\Text;
+use App\Livewire\SubscriptionInformationWidget;
 use Filament\Forms\Components\Grid;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Form;

@@ -10,9 +10,11 @@ use Filament\Forms\Form;
 use Filament\Resources\Concerns\Translatable;
 use Filament\Resources\Resource;
 use Filament\Tables;
+use Filament\Tables\Columns\BooleanColumn;
 use Filament\Tables\Table;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
+use phpDocumentor\Reflection\Types\Boolean;
 
 class TenantResource extends Resource
 {
@@ -34,6 +36,7 @@ class TenantResource extends Resource
             ->schema([
                 Forms\Components\Section::make()->schema([
                     Forms\Components\Grid::make()->schema([
+                        Forms\Components\Toggle::make('isActive')->label('Is Active'),
                         Forms\Components\TextInput::make('name')
                             ->placeholder('Ex: superShoes')
                             ->required(),
@@ -68,7 +71,7 @@ class TenantResource extends Resource
     public static function table(Table $table): Table
     {
         return $table
-            ->columns([
+            ->columns([  
                 Tables\Columns\TextColumn::make('id')
                     ->label('ID')
                     ->searchable()
@@ -79,7 +82,10 @@ class TenantResource extends Resource
                 Tables\Columns\TextColumn::make('email')
                     ->searchable()
                     ->sortable(),
-                Tables\Columns\TextColumn::make('created_at')
+                Tables\Columns\BooleanColumn::make('isActive')
+                    ->label('Active')
+                    ->sortable(),
+                    Tables\Columns\TextColumn::make('created_at')
                     ->dateTime()
                     ->sortable()
                     ->toggleable(isToggledHiddenByDefault: true),
@@ -93,6 +99,8 @@ class TenantResource extends Resource
             ])
             ->actions([
                 Tables\Actions\EditAction::make(),
+                Tables\Actions\DeleteAction::make(),
+
             ])
             ->bulkActions([
                 Tables\Actions\BulkActionGroup::make([

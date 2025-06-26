@@ -11,6 +11,11 @@ use Stancl\Tenancy\Database\Concerns\HasDomains;
 class Tenant extends BaseTenant implements TenantWithDatabase
 {
     use HasDatabase, HasDomains;
+
+    public function users(): HasMany
+    {
+        return $this->hasMany(User::class);
+    }
    
     public function domains(): HasMany
     {

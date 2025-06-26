@@ -5,6 +5,7 @@ declare(strict_types=1);
 use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
+use App\Http\Middleware\IsActive;
 use App\Http\Controllers\CartController;
 use App\Http\Controllers\StripeController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
@@ -26,6 +27,7 @@ Route::middleware([
     'web',
     InitializeTenancyByDomain::class,
     PreventAccessFromCentralDomains::class,
+    IsActive::class,
 ])->group(function () {
 
     // Guest routes
