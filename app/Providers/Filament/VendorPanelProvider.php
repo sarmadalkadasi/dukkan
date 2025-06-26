@@ -21,6 +21,7 @@ use Illuminate\Session\Middleware\StartSession;
 use Illuminate\View\Middleware\ShareErrorsFromSession;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
+use Stephenjude\FilamentTwoFactorAuthentication\TwoFactorAuthenticationPlugin;
 
 class VendorPanelProvider extends PanelProvider
 {
@@ -41,7 +42,11 @@ class VendorPanelProvider extends PanelProvider
             ->pages([
                 Pages\Dashboard::class,
             ])
-            // ->discoverWidgets(in: app_path('Filament/Vendor/Widgets'), for: 'App\\Filament\\Vendor\\Widgets')
+            ->plugins([
+                TwoFactorAuthenticationPlugin::make()
+                        ->enableTwoFactorAuthentication() // Enable Google 2FA
+                        ->addTwoFactorMenuItem() // Add 2FA menu item
+            ])
             ->widgets([
                 StateOverView::class,
                 BlogCustomerChart::class,

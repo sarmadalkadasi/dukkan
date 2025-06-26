@@ -54,12 +54,12 @@ class TenantResource extends Resource
                             ->postfix('.dukkan.test')
                             ->required(),
                         Forms\Components\FileUpload::make('logo')
-                            ->image()
-                            ->imageEditor()
-                            ->imageEditorViewportWidth('1080')
-                            ->imageEditorViewportHeight('1080')
-                            ->minSize(5)
-                            ->maxSize(2048),
+                            ->label('Store Logo')
+                            ->image()                         
+                            ->directory('logos')             
+                            ->visibility('public')          
+                            ->openable()
+                            ->imageEditor(),
                         Forms\Components\Textarea::make('description')
                             ->placeholder('Ex: we are a small shoes store ...')
                             ->columnSpanFull(),
@@ -76,6 +76,11 @@ class TenantResource extends Resource
                     ->label('ID')
                     ->searchable()
                     ->toggleable(isToggledHiddenByDefault: true),
+                Tables\Columns\ImageColumn::make('logo')
+                    ->label('Logo')
+                    ->disk('public')     
+                    ->visibility('public')
+                    ->height(50),
                 Tables\Columns\TextColumn::make('name')
                     ->searchable()
                     ->sortable(),

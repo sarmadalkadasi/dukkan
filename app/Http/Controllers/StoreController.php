@@ -37,11 +37,10 @@ class StoreController extends Controller
             'logo' => 'nullable|image|mimes:jpeg,png,jpg,gif,svg|max:3072',
         ]);
 
-        $logoName = null;
-
-        if ($logo = $request->file('logo')) {
-            $logoName = date('YmdHis') . '.' . $logo->getClientOriginalExtension();
-            $logo->move(public_path('logos'), $logoName);
+        $logo = null;
+        
+        if ($request->hasFile('logo')) { 
+            $logo = $request->file('logo')->store(path:'logos', options:['disk' => 'public']);
         }
 
         $tenant = Tenant::create([
@@ -49,14 +48,14 @@ class StoreController extends Controller
             'description' => $request->description,
             'email' => $request->user()->email,
             'password' => $request->user()->password,
-            'logo' => $logoName,
+            'logo' => $logo,
         ]);
 
         $tenant->domains()->create([
             'domain' => $request->domain,
         ]);
 
-        return Inertia::location('http://' . $request->domain . ':8000/vendor');
+        return Inertia::location('http://' . $request->domain . ':8000');
     }
 
     /**

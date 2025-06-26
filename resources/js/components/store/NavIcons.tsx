@@ -3,7 +3,7 @@ import { DropdownMenu, DropdownMenuContent, DropdownMenuItem, DropdownMenuTrigge
 import { useMobileNavigation } from '@/hooks/use-mobile-navigation';
 import { type SharedData } from '@/types';
 import { Link, usePage } from '@inertiajs/react';
-import { Bell, LogOut, Settings, ShoppingCart, User } from 'lucide-react';
+import { Bell, LayoutDashboard, LogOut, Settings, ShoppingCart, User } from 'lucide-react';
 import { useState } from 'react';
 import { UserInfo } from '../user-info';
 import CartModal from './CartModal';
@@ -27,6 +27,14 @@ const NavIcons = () => {
                                     <UserInfo user={auth.user} showEmail={true} />
                                 </div>
                             </DropdownMenuItem>
+                            {auth.user.rule === 'vendor' && (
+                                <DropdownMenuItem asChild>
+                                    <a className="block w-full" href={route('filament.vendor.pages.dashboard')} onClick={cleanup}>
+                                        <LayoutDashboard className="mr-2 h-4 w-4" />
+                                        Dashboard
+                                    </a>
+                                </DropdownMenuItem>
+                            )}
                             <DropdownMenuItem>
                                 <Link
                                     className="inline-flex w-full items-center justify-start"
@@ -58,9 +66,9 @@ const NavIcons = () => {
                 <>
                     <DropdownMenu>
                         <DropdownMenuTrigger asChild>
-                        <div className="flex items-center justify-center rounded-full">
-                            <User size={22} className="cursor-pointer text-[#1b1b18] dark:text-white" />{' '}
-                        </div>
+                            <div className="flex items-center justify-center rounded-full">
+                                <User size={22} className="cursor-pointer text-[#1b1b18] dark:text-white" />{' '}
+                            </div>
                         </DropdownMenuTrigger>
                         <DropdownMenuContent>
                             <DropdownMenuItem>
@@ -88,9 +96,7 @@ const NavIcons = () => {
             <Bell size={22} className="cursor-pointer text-[#1b1b18] dark:text-white" />
             <div className="relative cursor-pointer" onClick={() => setIsCartOpen((prev) => !prev)}>
                 <ShoppingCart size={24} className="h-6 w-6 text-[#1b1b18] dark:text-white" />
-                <div className="bg-blue-700 absolute -top-5 -right-4 h-6 w-5 rounded-full text-center text-white">
-                    {totalQuantity}
-                </div>
+                <div className="absolute -top-5 -right-4 h-6 w-5 rounded-full bg-blue-700 text-center text-white">{totalQuantity}</div>
             </div>
             {isCartOpen && <CartModal />}
         </div>
