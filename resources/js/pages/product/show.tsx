@@ -152,12 +152,12 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
                         length: Math.min(10, computedProduct.quantity),
                     }).map((el, i) => (
                         <option value={i + 1} key={i + 1}>
-                            Quantity: {i + 1}
+                            الكمية: {i + 1}
                         </option>
                     ))}
                 </select>
                 <button onClick={addToCart} className="btn btn-primary">
-                    Add to Cart
+                    أضف إلى السلة
                 </button>
             </div>
         );
@@ -174,7 +174,7 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
     return (
         <RootLayout>
             <Head title={product.title}/>
-            <div className="container mx-auto p-8">
+            <div className="container mx-auto p-8 text-right" dir="rtl">
                 <div className="grid gap-8 grid-cols-1 lg:grid-cols-12">
                     <div className="col-span-7">
                         <Carousel images={images}/>
@@ -192,12 +192,12 @@ function Show({product, variationOptions}: { product: Product; variationOptions:
 
                         {computedProduct.quantity != undefined && computedProduct.quantity < 10 && (
                             <div className="text-error my-4">
-                                <span>Only {computedProduct.quantity} left</span>
+                                <span>المتبقي فقط {computedProduct.quantity} قطع</span>
                             </div>
                         )}
                         {renderAddToCartButton()}
 
-                        <b className="text-xl">About the Item</b>
+                        <b className="text-xl">عن المنتج</b>
                         <div className="wysiwyg-output" dangerouslySetInnerHTML={{__html: product.description}}/>
                     </div>
                 </div>

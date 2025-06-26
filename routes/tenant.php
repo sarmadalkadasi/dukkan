@@ -6,6 +6,7 @@ use Illuminate\Support\Facades\Route;
 use Inertia\Inertia;
 use App\Http\Controllers\ProductController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\StripeController;
 use Stancl\Tenancy\Middleware\InitializeTenancyByDomain;
 use Stancl\Tenancy\Middleware\PreventAccessFromCentralDomains;
 
@@ -48,12 +49,24 @@ Route::middleware([
         return Inertia::render('product/details');
     })->name('product.details');
 
+    Route::post('/stripe/webhook', [StripeController::class, 'webhook'])
+        ->name('stripe.webhook');
+
     //
     Route::middleware('auth')->group(function () {
 
         Route::middleware(['verified'])->group(function () {
             Route::post('/cart/checkout', [CartController::class, 'checkout'])
                 ->name('cart.checkout');
+
+            Route::get('/stripe/success', [StripeController::class, 'success'])
+                ->name('stripe.success');
+
+            Route::get('/stripe/failure', [StripeController::class, 'failure'])
+                ->name('stripe.failure');
+
+            Route::get('/stripe/failure', [StripeController::class, 'failure'])
+                ->name('stripe.failure');
         });
     });
 

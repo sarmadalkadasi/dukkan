@@ -32,8 +32,13 @@ return Application::configure(basePath: dirname(__DIR__))
             HandleInertiaRequests::class,
             AddLinkHeadersForPreloadedAssets::class,
         ]);
-        $middleware->validateCsrfTokens(except: ['livewire/*']);        
+        $middleware->validateCsrfTokens(except: ['livewire/*']);
         $middleware->group('universal', []);
+
+        $middleware->validateCsrfTokens(except: [
+            'stripe/*'
+        ]);
+
     })
     ->withExceptions(function (Exceptions $exceptions) {
         //

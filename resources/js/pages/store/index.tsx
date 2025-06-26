@@ -13,11 +13,17 @@ products
         <RootLayout name="" descreption="" logo="">
             <Head title="Home"/>
             <div className="my-4">
-                <Slider/>
-                <div className="grid grid-cols-1 gap-8 md:grid-cols-2 lg:grid-cols-3 p-8">
-                    {products.data.map( product=> (
-                        <ProductItem product={product} key={product.id}/>
-                    ))}
+                <div className="mb-6 sm:mb-8">
+                    <Slider/>
+                </div>
+                <div className="container mx-auto px-3 sm:px-4 md:px-6">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6" dir="rtl">
+                        {products.data.map(product => (
+                            <div key={product.id} className="w-full h-full">
+                                <ProductItem product={product} />
+                            </div>
+                        ))}
+                    </div>
                 </div>
                 {/*<div className="mt-24 px-4 md:px-8 lg:px-16 xl:32 2xl:px-64">*/}
                 {/*    <h1 className="text-2xl mb-14">Featured Products</h1>*/}
